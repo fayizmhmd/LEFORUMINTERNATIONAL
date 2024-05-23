@@ -41,13 +41,9 @@ class CategoryController extends Controller
     public function updateCategories(Request $request)
     {
         $category = Category::find($request->category_id);
-        $request->validate([
-            'name' => 'required|string|max:255',
-            'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048', // Assuming 'image' is the name of your file input field
-        ]);
-        if ($request->has('name')) {
-            $category->name = $request->name;
-        }
+
+        $category->name = $request->name;
+
         if ($request->file('image')) {
             $file = $request->file('image');
             $imageName = time() . $file->getClientOriginalName();
@@ -56,6 +52,7 @@ class CategoryController extends Controller
             $category->image = 'categories/' . $imageName;
         }
         $category->save();
+
         return redirect()->route('admin.viewCategories')->with('success', 'Category updated successfully');
     }
 
