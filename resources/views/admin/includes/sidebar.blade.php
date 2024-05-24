@@ -106,7 +106,7 @@
                             </li>
                         @endcan
 
-                        @can('all_users')
+                        {{-- @can('all_users')
                             <li class="nk-menu-item ">
                                 <a href="{{ route('admin.viewCourses') }}" class="nk-menu-link">
                                     <span class="nk-menu-icon">
@@ -124,6 +124,18 @@
                                         <em class="icon ni ni-location"></em>
                                     </span>
                                     <span class="nk-menu-text">Locations</span>
+                                </a>
+                            </li>
+                        @endcan --}}
+
+
+                        @can('all_users')
+                            <li class="nk-menu-item ">
+                                <a href="{{ route('admin.viewsettings') }}" class="nk-menu-link">
+                                    <span class="nk-menu-icon">
+                                        <em class="icon ni ni-setting"></em>
+                                    </span>
+                                    <span class="nk-menu-text">Settings</span>
                                 </a>
                             </li>
                         @endcan

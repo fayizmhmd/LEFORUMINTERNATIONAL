@@ -14,6 +14,7 @@ use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\PlanController;
 use App\Http\Controllers\ReportController;
 use App\Http\Controllers\ReviewController;
+use App\Http\Controllers\SettingsController;
 use App\Http\Controllers\SubscriptionController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -110,6 +111,9 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/delete-locations/{id}', [LocationController::class, 'deleteLocations'])->name('admin.deleteLocations');
     Route::get('/toggle-locations/{id}', [LocationController::class, 'toggleLocation'])->name('admin.toggleLocation');
 
+    //settings
+    Route::get('/view-settings', [SettingsController::class, 'viewsettings'])->name('admin.viewsettings');
+    Route::post('/update-settings', [SettingsController::class, 'updatesettings'])->name('admin.updatesettings');
 
     //home
     Route::get('/home', [FrontEndController::class, 'home'])->name('admin.home');
