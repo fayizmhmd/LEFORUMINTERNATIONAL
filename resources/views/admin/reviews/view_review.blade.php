@@ -26,7 +26,7 @@
                             <tr>
                                 <th class="text-center">Id</th>
                                 <th>Name</th>
-                                <th>College/University</th>
+                                {{-- <th>College/University</th> --}}
                                 <th>Review</th>
                                 <th>Status</th>
                                 <th>Action</th>
@@ -93,10 +93,10 @@
                     data: 'name',
                     sortable: false
                 },
-                {
-                    data: 'position',
-                    sortable: false
-                },
+                // {
+                //     data: 'position',
+                //     sortable: false
+                // },
                 {
                     data: 'review',
                     sortable: false

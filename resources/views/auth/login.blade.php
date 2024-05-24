@@ -25,12 +25,12 @@
                         {{-- <div class="brand-logo pb-4 text-center h1 fw-bold">Safa Group</div> --}}
 
                         <div class="brand-logo text-center fw-bold">
-                            {{-- <img class="mx-1" src="{{ asset('assets/images/header-logo.png') }}"
-                                style="width:50%;object-fit:cover" alt="logo" /> --}}
-                                <span style="font-weight: bold; font-size: 30px;">
+                            <img class="mx-1" src="{{ asset('frontstyles/assets/images/le-logo-gold-12.png') }}"
+                                style="width:50%;object-fit:cover" alt="logo" />
+                                {{-- <span style="font-weight: bold; font-size: 30px;">
                                     <span style="color: red; width:50%;object-fit:cover">COLLEGES</span>
                                     <span style="color: black; width:50%;object-fit:cover">BANGALORE</span>
-                                </span>
+                                </span> --}}
                         </div>
                         <div class="card">
                             <div class="card-inner card-inner-lg">

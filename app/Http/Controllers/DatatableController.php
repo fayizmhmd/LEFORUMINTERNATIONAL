@@ -320,9 +320,9 @@ class DatatableController extends Controller
             ->addColumn('name', function ($review) {
                 return $review->name ?? 'Name Not Given';
             })
-            ->addColumn('position', function ($review) {
-                return $review->position ?? 'Position Not Given';
-            })
+            // ->addColumn('position', function ($review) {
+            //     return $review->position ?? 'Position Not Given';
+            // })
             ->addColumn('review', function ($review) {
                 return $review->review ?? 'Review Not Given';
             })

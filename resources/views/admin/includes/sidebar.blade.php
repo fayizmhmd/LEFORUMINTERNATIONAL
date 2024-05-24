@@ -2,12 +2,12 @@
     <div class="nk-sidebar-element nk-sidebar-head">
         {{-- <div class="nk-sidebar-brand">Safa Group of Companies</div> --}}
         <div class="flex-grow-1 nk-sidebar-brand d-flex align-items-center" >
-            {{-- <img class="mx-1" src="{{ asset('assets/images/header-logo.png') }}" style=" width: 160px; "
-                alt="logo" /> --}}
-                <span style="font-weight: bold; font-size: 20px;">
+            <img class="mx-1" src="{{ asset('frontstyles/assets/images/le-logo-gold-12.png') }}" style=" width: 160px; "
+                alt="logo" />
+                {{-- <span style="font-weight: bold; font-size: 20px;">
                     <span style="color: red;">COLLEGES</span>
                     <span style="color: black;">BANGALORE</span>
-                </span>
+                </span> --}}
         </div>
         <div class="nk-menu-trigger me-n2">
             <a href="#" class="nk-nav-toggle nk-quick-nav-icon d-xl-none" data-target="sidebarMenu">

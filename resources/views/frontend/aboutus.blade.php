@@ -219,6 +219,7 @@
                 <div class="col-md-6 col-lg-6">
                     <div class="swiper testitwo__wrap">
                         <div class="swiper-wrapper">
+                            @foreach ($reviews as $review)
                             <div class="swiper-slide">
 
                                 <div class="testi-twotext">
@@ -240,139 +241,16 @@
                                         </li>
                                     </ul>
                                     <p class="n700-color fs20 bb-n40 pb-5 pb-xl-6 mb-5 mb-xl-6">
-                                        "I owe my success to Lè Forum International. Their dedicated team and effective strategies made all the difference in my education".
+                                        {{ $review -> review }}
                                     </p>
                                     <h5 class="n700-color mb-1">
-                                        Thamanna Basheer
+                                        {{ $review -> name }}
                                     </h5>
 
                                 </div>
 
                             </div>
-
-                            <div class="swiper-slide">
-
-                                <div class="testi-twotext">
-                                    <ul class="ratting d-flex align-items-center gap-1 gap-xl-2 mb-4">
-                                        <li>
-                                            <i class="ti ti-star-filled fs20 s1-color"></i>
-                                        </li>
-                                        <li>
-                                            <i class="ti ti-star-filled fs20 s1-color"></i>
-                                        </li>
-                                        <li>
-                                            <i class="ti ti-star-filled fs20 s1-color"></i>
-                                        </li>
-                                        <li>
-                                            <i class="ti ti-star-filled fs20e s1-color"></i>
-                                        </li>
-                                        <li>
-                                            <i class="ti ti-star-half-filled fs20 s1-color"></i>
-                                        </li>
-                                    </ul>
-                                    <p class="n700-color fs20 bb-n40 pb-5 pb-xl-6 mb-5 mb-xl-6">
-                                        "Lè Forum International was instrumental in my academic journey. Their tailored strategic approach turned my aspirations into achievements".
-                                    </p>
-                                    <h5 class="n700-color mb-1">
-                                        Goutham Maheshwar
-                                    </h5>
-
-                                </div>
-
-                            </div>
-
-                            <div class="swiper-slide">
-
-                                <div class="testi-twotext">
-                                    <ul class="ratting d-flex align-items-center gap-1 gap-xl-2 mb-4">
-                                        <li>
-                                            <i class="ti ti-star-filled fs20 s1-color"></i>
-                                        </li>
-                                        <li>
-                                            <i class="ti ti-star-filled fs20 s1-color"></i>
-                                        </li>
-                                        <li>
-                                            <i class="ti ti-star-filled fs20 s1-color"></i>
-                                        </li>
-                                        <li>
-                                            <i class="ti ti-star-filled fs20e s1-color"></i>
-                                        </li>
-                                        <li>
-                                            <i class="ti ti-star-half-filled fs20 s1-color"></i>
-                                        </li>
-                                    </ul>
-                                    <p class="n700-color fs20 bb-n40 pb-5 pb-xl-6 mb-5 mb-xl-6">
-                                       "My achievements are a testament to the excellence of Lè Forum International. Their committed mentors were pivotal in shaping my educational journey".
-                                    </p>
-                                    <h5 class="n700-color mb-1">
-                                        Laya Joseph
-                                    </h5>
-
-                                </div>
-                                </div>
-
-                                <div class="swiper-slide">
-                                <div class="testi-twotext">
-                                    <ul class="ratting d-flex align-items-center gap-1 gap-xl-2 mb-4">
-                                        <li>
-                                            <i class="ti ti-star-filled fs20 s1-color"></i>
-                                        </li>
-                                        <li>
-                                            <i class="ti ti-star-filled fs20 s1-color"></i>
-                                        </li>
-                                        <li>
-                                            <i class="ti ti-star-filled fs20 s1-color"></i>
-                                        </li>
-                                        <li>
-                                            <i class="ti ti-star-filled fs20e s1-color"></i>
-                                        </li>
-                                        <li>
-                                            <i class="ti ti-star-half-filled fs20 s1-color"></i>
-                                        </li>
-                                    </ul>
-                                    <p class="n700-color fs20 bb-n40 pb-5 pb-xl-6 mb-5 mb-xl-6">
-                                        "At LeForum, I've found not just courses, but a supportive community that's transformed my learning experience. It's truly been a game-changer for me".
-                                    </p>
-                                    <h5 class="n700-color mb-1">
-                                        Athira
-                                    </h5>
-
-                                </div>
-                                </div>
-
-                                <div class="swiper-slide">
-                                    <div class="testi-twotext">
-                                        <ul class="ratting d-flex align-items-center gap-1 gap-xl-2 mb-4">
-                                            <li>
-                                                <i class="ti ti-star-filled fs20 s1-color"></i>
-                                            </li>
-                                            <li>
-                                                <i class="ti ti-star-filled fs20 s1-color"></i>
-                                            </li>
-                                            <li>
-                                                <i class="ti ti-star-filled fs20 s1-color"></i>
-                                            </li>
-                                            <li>
-                                                <i class="ti ti-star-filled fs20e s1-color"></i>
-                                            </li>
-                                            <li>
-                                                <i class="ti ti-star-half-filled fs20 s1-color"></i>
-                                            </li>
-                                        </ul>
-                                        <p class="n700-color fs20 bb-n40 pb-5 pb-xl-6 mb-5 mb-xl-6">
-                                            "LeForum's community transforms learning beyond courses, fostering camaraderie and growth. It celebrates success, revolutionizing my learning experience".
-                                        </p>
-                                        <h5 class="n700-color mb-1">
-                                            Anagha
-                                        </h5>
-
-                                    </div>
-                                </div>
-
-
-
-
-
+                            @endforeach
                         </div>
                         <div class="slider-btn ps-1 mt-8 mt-xl-10 d-flex gap-5">
                             <button type="button" class=" swiper-button-next3 cmn-btn d-center cmn__icon56 cmn__icon56border">

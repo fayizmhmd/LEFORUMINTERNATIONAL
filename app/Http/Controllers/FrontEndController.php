@@ -25,24 +25,35 @@ class FrontEndController extends Controller
     }
 
     public function allcolleges(Request $request)
-    {
-        // Retrieve selected course and location from the request
-        $keyword = $request->input('key-word');
-        $region = $request->input('region');
+{
+    // Retrieve selected course and location from the request
+    $keyword = $request->input('key-word');
+    $region = $request->input('region');
 
-        // Filter colleges based on the selected course and location
-        $colleges = College::whereHas('courses', function ($query) use ($keyword) {
-            $query->where('name', 'like', '%' . $keyword . '%');
-        })
-            ->whereHas('locations', function ($query) use ($region) {
-                $query->where('name', $region);
-            })
-            ->get();
+    // Initialize query
+    $query = College::query();
 
-        // Retrieve all locations
-        $locations = Location::all();
-
-        // Pass colleges and locations to the view
-        return view('frontend.allcolleges', compact('colleges', 'locations'));
+    // Apply filters if provided
+    if (!empty($keyword)) {
+        $query->whereHas('courses', function ($q) use ($keyword) {
+            $q->where('name', 'like', '%' . $keyword . '%');
+        });
     }
+
+    if (!empty($region)) {
+        $query->whereHas('locations', function ($q) use ($region) {
+            $q->where('name', $region);
+        });
+    }
+
+    // Get the filtered or all colleges
+    $colleges = $query->get();
+
+    // Retrieve all locations
+    $locations = Location::all();
+
+    // Pass colleges and locations to the view
+    return view('frontend.allcolleges', compact('colleges', 'locations'));
+}
+
 }

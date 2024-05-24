@@ -19,28 +19,26 @@
                     required />
             </div>
         </div>
-        <div class='form-group row mb-4 align-middle'>
+        {{-- <div class='form-group row mb-4 align-middle'>
             <label class=" col-lg-3 required form-label">Location</label>
             <div class="col-lg-9">
                 <select name="location_id[]" class="form-control" multiple>
-                    {{-- <option value="">Select a location</option> --}}
                     @foreach ($locations as $location)
                         <option value="{{ $location->id }}">{{ $location->name }}</option>
                     @endforeach
                 </select>
             </div>
-        </div>
-        <div class='form-group row mb-4 align-middle'>
+        </div> --}}
+        {{-- <div class='form-group row mb-4 align-middle'>
             <label class=" col-lg-3 required form-label">Courses</label>
             <div class="col-lg-9">
                 <select name="course_id[]" class="form-control" multiple>
-                    {{-- <option value="">Select courses...!</option> --}}
                     @foreach ($courses as $course)
                         <option value="{{ $course->id }}">{{ $course->name }}</option>
                     @endforeach
                 </select>
             </div>
-        </div>
+        </div> --}}
         <div class='form-group row mb-4 align-middle'>
             <label class="col-lg-3 required form-label">Description</label>
             <div class="col-lg-9">

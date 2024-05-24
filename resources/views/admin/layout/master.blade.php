@@ -13,7 +13,7 @@
     @php
         $path = asset('/');
     @endphp
-    <link rel="shortcut icon" href="{{ $path }}assets/images/logo-sqare.png">
+    <link rel="shortcut icon" href="{{ $path }}frontstyles/assets/images/le-logo-gold-EMBLEM.png">
     <link rel="stylesheet" href="{{ $path }}assets/css/dashlitee5ca.css">
     <link id="skin-default" rel="stylesheet" href="{{ $path }}assets/css/themee5ca.css">
     {{-- <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.0/css/toastr.css" rel="stylesheet" />

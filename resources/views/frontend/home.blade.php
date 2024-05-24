@@ -417,18 +417,19 @@
         <div class="container">
             <div class="swiper educational__wrap position-relative">
                 <div class="swiper-wrapper">
+                    @foreach ($colleges as $college)
                     <div class="swiper-slide wow fadeInUp" data-wow-delay="0.5s">
                         <div class="explore__item cmnhover" data-aos="zoom-in" data-aos-duration="1500">
                             <div class="thumb over w-100 position-relative">
                                 <img style="height: 200px;"
-                                    src="{{ asset('frontstyles/assets/images/colleges/mcc.jpeg') }}"
+                                    src="{{ $path . json_decode($college->image, true)[0] }}"
                                     class="w-100 radius32 mimg " alt="img">
                             </div>
                             <div class="content pt-5 pt-xxl-6 px-0 px-xl-3 px-xxl-4 pb-xxl-4 pb-3">
 
                                 <h4 class="mb-4 mb-xl-5">
                                     <a href="colleges-details1.html" class="ptext">
-                                        MOUNT CARMEL COLLEGE (MCC)
+                                        {{ $college->name }}
                                     </a>
                                 </h4>
 
@@ -436,7 +437,7 @@
                                     <span
                                         style="background-color: rgb(100, 200, 100); color:white; font-size: 10px; padding: 0.5em;"
                                         class="rounded fw_600 py-1 py-xl-2 px-1 px-xl-2">
-                                        5.0
+                                        {{ $college->rating }}
                                     </span>
 
                                     <span style="color: black;" class="py-1 py-xl-2 px-3 px-xl-4">
@@ -449,387 +450,14 @@
 
                                         <h6 class="n700-color fw_500"
                                             style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 5; -webkit-box-orient: vertical;">
-                                            Established in 1948, MCC empowers students to excel and become global
-                                            citizens. Offering diverse undergraduate and postgraduate programs in arts,
-                                            commerce, science, and business management, MCC blends tradition with
-                                            innovation.
+                                            {{ substr(strip_tags($college->description), 0, 300) }}
                                         </h6>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="swiper-slide wow fadeInUp" data-wow-delay="0.8s">
-                        <div class="explore__item cmnhover" data-aos="zoom-in" data-aos-duration="1500">
-                            <div class="thumb over w-100 position-relative">
-                                <img style="height: 200px;"
-                                    src="{{ asset('frontstyles/assets/images/colleges/bgs-global-medical-college.jpg') }}"
-                                    class="w-100 radius32 mimg " alt="img">
-                            </div>
-                            <div class="content pt-5 pt-xxl-6 px-0 px-xl-3 px-xxl-4 pb-xxl-4 pb-3">
-
-                                <h4 class="mb-4 mb-xl-5">
-                                    <a href="colleges-details8.html" class="ptext">
-                                        BGS GLOBAL INSTITUTE OF MEDICAL SCIENCES (BGSGIMS)
-                                    </a>
-                                </h4>
-                                <div class="d-flex align-items-center justify-start mb-2 mb-xl-6">
-                                    <span
-                                        style="background-color: rgb(100, 200, 100); color:white; font-size: 10px; padding: 0.5em;"
-                                        class="rounded fw_600 py-1 py-xl-2 px-1 px-xl-2">
-                                        5.0
-                                    </span>
-
-                                    <span style="color: black;" class="py-1 py-xl-2 px-3 px-xl-4">
-                                        4.6 rating
-                                    </span>
-
-                                </div>
-                                <div class="d-flex align-items-center justify-content-between mb-1 mb-xl-0">
-                                    <div class="d-flex align-items-center gap-1 gap-xl-2">
-                                        <!-- <i class="ti ti-versions fs-five"></i> -->
-                                        <h6 class="n700-color fw_500"
-                                            style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 5; -webkit-box-orient: vertical;">
-                                            BGS Global Institute of Medical Sciences (BGSGIMS) excels in medical
-                                            education, equipping students for successful careers. With top-notch
-                                            facilities and experienced faculty, BGSGIMS prioritizes high-quality
-                                            education and research to meet evolving healthcare needs
-                                        </h6>
-
-                                    </div>
-
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide wow fadeInUp" data-wow-delay="1s">
-                        <div class="explore__item cmnhover" data-aos="zoom-in" data-aos-duration="1500">
-                            <div class="thumb over w-100 position-relative">
-                                <img style="height: 200px;"
-                                    src="{{ asset('frontstyles/assets/images/colleges/jyotinivasclg.png') }}"
-                                    class="w-100 radius32 mimg " alt="img">
-                            </div>
-                            <div class="content pt-5 pt-xxl-6 px-0 px-xl-3 px-xxl-4 pb-xxl-4 pb-3">
-
-                                <h4 class="mb-4 mb-xl-5">
-                                    <a href="colleges-details2.html" class="ptext">
-                                        JYOTI NIVAS COLLEGE (JNC)
-                                    </a>
-                                </h4>
-                                <div class="d-flex align-items-center justify-start mb-2 mb-xl-6">
-                                    <span
-                                        style="background-color: rgb(100, 200, 100); color:white; font-size: 10px; padding: 0.5em;"
-                                        class="rounded fw_600 py-1 py-xl-2 px-1 px-xl-2">
-                                        5.0
-                                    </span>
-
-                                    <span style="color: black;" class="py-1 py-xl-2 px-3 px-xl-4">
-                                        4.2 rating
-                                    </span>
-
-                                </div>
-                                <div class="d-flex align-items-center justify-content-between mb-1 mb-xl-1">
-                                    <div class="d-flex align-items-center gap-1 gap-xl-2">
-                                        <!-- <i class="ti ti-versions fs-five"></i> -->
-                                        <h6 class="n700-color fw_500"
-                                            style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 5; -webkit-box-orient: vertical;">
-
-                                            Jyoti Nivas College (JNC) is a leading institution renowned for its academic
-                                            excellence and holistic approach to education. With a rich legacy spanning
-                                            decades, JNC offers a diverse range of programs and fosters a vibrant
-                                            learning environment conducive to personal and professional growth.
-                                            Committed to nurturing future leaders, Jyoti Nivas College empowers students
-                                            to excel academically, ethically, and socially.
-                                        </h6>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="swiper-slide wow fadeInUp" data-wow-delay="1s">
-                        <div class="explore__item cmnhover" data-aos="zoom-in" data-aos-duration="1500">
-                            <div class="thumb over w-100 position-relative">
-                                <img style="height: 200px;"
-                                    src="{{ asset('frontstyles/assets/images/colleges/bmsce.jpg') }}"
-                                    class="w-100 radius32 mimg " alt="img">
-                            </div>
-                            <div class="content pt-5 pt-xxl-6 px-0 px-xl-3 px-xxl-4 pb-xxl-4 pb-3">
-
-                                <h4 class="mb-4 mb-xl-5">
-                                    <a href="colleges-details3.html" class="ptext">
-                                        BMS COLLEGE OF ENGINEERING (BMSCE)
-                                    </a>
-                                </h4>
-                                <div class="d-flex align-items-center justify-start mb-2 mb-xl-6">
-                                    <span
-                                        style="background-color: rgb(100, 200, 100); color:white; font-size: 10px; padding: 0.5em;"
-                                        class="rounded fw_600 py-1 py-xl-2 px-1 px-xl-2">
-                                        5.0
-                                    </span>
-
-                                    <span style="color: black;" class="py-1 py-xl-2 px-3 px-xl-4">
-                                        4.3 rating
-                                    </span>
-                                    <!-- <a href="course-profile.html" class="n20-bg w40 d-center rounded">
-                                        <i class="ti ti-heart fs-six n700-color"></i>
-                                    </a> -->
-                                </div>
-                                <div class="d-flex align-items-center justify-content-between mb-1 mb-xl-1">
-                                    <div class="d-flex align-items-center gap-1 gap-xl-2">
-                                        <!-- <i class="ti ti-versions fs-five"></i> -->
-                                        <h6 class="n700-color fw_500"
-                                            style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 5; -webkit-box-orient: vertical;">
-
-                                            BMS College of Engineering (BMSCE) is a prestigious institution celebrated
-                                            for its excellence in engineering education. With a legacy of innovation and
-                                            academic rigor, BMSCE offers diverse programs and fosters a dynamic learning
-                                            environment. Committed to producing skilled engineers, BMSCE equips students
-                                            with the knowledge and expertise to thrive in the ever-evolving field of
-                                            engineering.
-                                        </h6>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="swiper-slide wow fadeInUp" data-wow-delay="1s">
-                        <div class="explore__item cmnhover" data-aos="zoom-in" data-aos-duration="1500">
-                            <div class="thumb over w-100 position-relative">
-                                <img style="height: 200px;"
-                                    src="{{ asset('frontstyles/assets/images/colleges/st-johns-medical-college-hospital-banglore.jpg') }}"
-                                    class="w-100 radius32 mimg " alt="img">
-                            </div>
-                            <div class="content pt-5 pt-xxl-6 px-0 px-xl-3 px-xxl-4 pb-xxl-4 pb-3">
-
-                                <h4 class="mb-4 mb-xl-5">
-                                    <a href="colleges-details4.html" class="ptext">
-                                        ST.JOHN'S MEDICAL COLLEGE (SJMC)
-                                    </a>
-                                </h4>
-                                <div class="d-flex align-items-center justify-start mb-2 mb-xl-6">
-                                    <span
-                                        style="background-color: rgb(100, 200, 100); color:white; font-size: 10px; padding: 0.5em;"
-                                        class="rounded fw_600 py-1 py-xl-2 px-1 px-xl-2">
-                                        5.0
-                                    </span>
-
-                                    <span style="color: black;" class="py-1 py-xl-2 px-3 px-xl-4">
-                                        4.7 rating
-                                    </span>
-                                    <!-- <a href="course-profile.html" class="n20-bg w40 d-center rounded">
-                                        <i class="ti ti-heart fs-six n700-color"></i>
-                                    </a> -->
-                                </div>
-                                <div class="d-flex align-items-center justify-content-between mb-1 mb-xl-1">
-                                    <div class="d-flex align-items-center gap-1 gap-xl-2">
-                                        <!-- <i class="ti ti-versions fs-five"></i> -->
-                                        <h6 class="n700-color fw_500"
-                                            style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 5; -webkit-box-orient: vertical;">
-
-                                            St. John's Medical College (SJMC) is a renowned institution dedicated to
-                                            medical education and healthcare advancement. With a legacy of excellence,
-                                            SJMC offers comprehensive programs and fosters a culture of compassion and
-                                            innovation. Committed to producing competent healthcare professionals, SJMC
-                                            equips students with the skills and knowledge to meet the evolving needs of
-                                            the medical field.
-                                        </h6>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="swiper-slide wow fadeInUp" data-wow-delay="1s">
-                        <div class="explore__item cmnhover" data-aos="zoom-in" data-aos-duration="1500">
-                            <div class="thumb over w-100 position-relative">
-                                <img style="height: 200px;"
-                                    src="{{ asset('frontstyles/assets/images/colleges/RVCE.jpg') }}"
-                                    class="w-100 radius32 mimg " alt="img">
-                            </div>
-                            <div class="content pt-5 pt-xxl-6 px-0 px-xl-3 px-xxl-4 pb-xxl-4 pb-3">
-
-                                <h4 class="mb-4 mb-xl-5">
-                                    <a href="colleges-detail5.html" class="ptext">
-                                        R.V. COLLEGE OF ENGINEERING (RVCE)
-                                    </a>
-                                </h4>
-                                <div class="d-flex align-items-center justify-start mb-2 mb-xl-6">
-                                    <span
-                                        style="background-color: rgb(100, 200, 100); color:white; font-size: 10px; padding: 0.5em;"
-                                        class="rounded fw_600 py-1 py-xl-2 px-1 px-xl-2">
-                                        5.0
-                                    </span>
-
-                                    <span style="color: black;" class="py-1 py-xl-2 px-3 px-xl-4">
-                                        4.4 rating
-                                    </span>
-                                    <!-- <a href="course-profile.html" class="n20-bg w40 d-center rounded">
-                                        <i class="ti ti-heart fs-six n700-color"></i>
-                                    </a> -->
-                                </div>
-                                <div class="d-flex align-items-center justify-content-between mb-1 mb-xl-1">
-                                    <div class="d-flex align-items-center gap-1 gap-xl-2">
-                                        <!-- <i class="ti ti-versions fs-five"></i> -->
-                                        <h6 class="n700-color fw_500"
-                                            style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 5; -webkit-box-orient: vertical;">
-
-                                            R.V. College of Engineering (RVCE) stands as a premier institution known for
-                                            its exceptional engineering education. With a tradition of excellence, RVCE
-                                            offers diverse programs and cultivates a culture of innovation and
-                                            leadership. Committed to shaping future engineers, RVCE provides students
-                                            with the skills and resources to excel in the field of engineering.
-                                        </h6>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="swiper-slide wow fadeInUp" data-wow-delay="1s">
-                        <div class="explore__item cmnhover" data-aos="zoom-in" data-aos-duration="1500">
-                            <div class="thumb over w-100 position-relative">
-                                <img style="height: 200px;"
-                                    src="{{ asset('frontstyles/assets/images/colleges/cms-bussiness-school.png') }}"
-                                    class="w-100 radius32 mimg " alt="img">
-                            </div>
-                            <div class="content pt-5 pt-xxl-6 px-0 px-xl-3 px-xxl-4 pb-xxl-4 pb-3">
-
-                                <h4 class="mb-4 mb-xl-5">
-                                    <a href="colleges-details7.html" class="ptext">
-                                        CMS BUSINESS SCHOOL (CMSBS)
-                                    </a>
-                                </h4>
-                                <div class="d-flex align-items-center justify-start mb-2 mb-xl-6">
-                                    <span
-                                        style="background-color: rgb(100, 200, 100); color:white; font-size: 10px; padding: 0.5em;"
-                                        class="rounded fw_600 py-1 py-xl-2 px-1 px-xl-2">
-                                        5.0
-                                    </span>
-
-                                    <span style="color: black;" class="py-1 py-xl-2 px-3 px-xl-4">
-                                        4.1 rating
-                                    </span>
-                                    <!-- <a href="course-profile.html" class="n20-bg w40 d-center rounded">
-                                        <i class="ti ti-heart fs-six n700-color"></i>
-                                    </a> -->
-                                </div>
-                                <div class="d-flex align-items-center justify-content-between mb-1 mb-xl-1">
-                                    <div class="d-flex align-items-center gap-1 gap-xl-2">
-                                        <!-- <i class="ti ti-versions fs-five"></i> -->
-                                        <h6 class="n700-color fw_500"
-                                            style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 5; -webkit-box-orient: vertical;">
-
-                                            CMS Business School (CMSBS) is a distinguished institution renowned for its
-                                            excellence in business education. With a focus on innovation and practical
-                                            learning, CMSBS offers comprehensive programs tailored to meet industry
-                                            demands. Committed to nurturing future business leaders, CMSBS provides
-                                            students with the knowledge and skills to thrive in dynamic global markets.
-                                        </h6>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div class="swiper-slide wow fadeInUp" data-wow-delay="1s">
-                        <div class="explore__item cmnhover" data-aos="zoom-in" data-aos-duration="1500">
-                            <div class="thumb over w-100 position-relative">
-                                <img style="height: 200px;"
-                                    src="{{ asset('frontstyles/assets/images/colleges/msrit.jpg') }}"
-                                    class="w-100 radius32 mimg " alt="img">
-                            </div>
-                            <div class="content pt-5 pt-xxl-6 px-0 px-xl-3 px-xxl-4 pb-xxl-4 pb-3">
-
-                                <h4 class="mb-4 mb-xl-5">
-                                    <a href="colleges-details6.html" class="ptext">
-                                        M.S RAMAIAH INSTITUTE OF TECHNOLOGY (MSRIT)
-                                    </a>
-                                </h4>
-                                <div class="d-flex align-items-center justify-start mb-2 mb-xl-6">
-                                    <span
-                                        style="background-color: rgb(100, 200, 100); color:white; font-size: 10px; padding: 0.5em;"
-                                        class="rounded fw_600 py-1 py-xl-2 px-1 px-xl-2">
-                                        5.0
-                                    </span>
-
-                                    <span style="color: black;" class="py-1 py-xl-2 px-3 px-xl-4">
-                                        4.5 rating
-                                    </span>
-                                    <!-- <a href="course-profile.html" class="n20-bg w40 d-center rounded">
-                                        <i class="ti ti-heart fs-six n700-color"></i>
-                                    </a> -->
-                                </div>
-                                <div class="d-flex align-items-center justify-content-between mb-1 mb-xl-1">
-                                    <div class="d-flex align-items-center gap-1 gap-xl-2">
-                                        <!-- <i class="ti ti-versions fs-five"></i> -->
-                                        <h6 class="n700-color fw_500"
-                                            style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 5; -webkit-box-orient: vertical;">
-
-                                            M.S. Ramaiah Institute of Technology (MSRIT) is a leading institution
-                                            acclaimed for its excellence in technical education. With a legacy of
-                                            innovation and academic rigor, MSRIT offers diverse programs and fosters a
-                                            dynamic learning environment. Committed to nurturing skilled engineers,
-                                            MSRIT equips students with the knowledge and expertise to excel in the
-                                            ever-evolving field of technology.
-                                        </h6>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="swiper-slide wow fadeInUp" data-wow-delay="1s">
-                        <div class="explore__item cmnhover" data-aos="zoom-in" data-aos-duration="1500">
-                            <div class="thumb over w-100 position-relative">
-                                <img style="height: 200px;"
-                                    src="{{ asset('frontstyles/assets/images/colleges/christ-university.jpg') }}"
-                                    class="w-100 radius32 mimg " alt="img">
-                            </div>
-                            <div class="content pt-5 pt-xxl-6 px-0 px-xl-3 px-xxl-4 pb-xxl-4 pb-3">
-
-                                <h4 class="mb-4 mb-xl-5">
-                                    <a href="#" class="ptext">
-                                        CHRIST UNIVERSITY
-                                    </a>
-                                </h4>
-                                <div class="d-flex align-items-center justify-start mb-2 mb-xl-6">
-                                    <span
-                                        style="background-color: rgb(100, 200, 100); color:white; font-size: 10px; padding: 0.5em;"
-                                        class="rounded fw_600 py-1 py-xl-2 px-1 px-xl-2">
-                                        5.0
-                                    </span>
-
-                                    <span style="color: black;" class="py-1 py-xl-2 px-3 px-xl-4">
-                                        4.5 rating
-                                    </span>
-                                    <!-- <a href="course-profile.html" class="n20-bg w40 d-center rounded">
-                                        <i class="ti ti-heart fs-six n700-color"></i>
-                                    </a> -->
-                                </div>
-                                <div class="d-flex align-items-center justify-content-between mb-1 mb-xl-1">
-                                    <div class="d-flex align-items-center gap-1 gap-xl-2">
-                                        <!-- <i class="ti ti-versions fs-five"></i> -->
-                                        <h6 class="n700-color fw_500"
-                                            style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 5; -webkit-box-orient: vertical;">
-
-                                            CHRIST, also known as Christ College and Christ University, is a
-                                            deemed-to-be-university located in Bangalore, Karnataka, India.[6] Founded
-                                            in 1969 as Christ College, the University
-                                        </h6>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-
-
-
+                    @endforeach
                 </div>
             </div>
             <div class="slider-btn freeclick mt-8 mt-xl-10 d-flex gap-5 justify-content-center">
@@ -862,9 +490,7 @@
             </div>
             <div class="swiper testimonial__onewrap">
                 <div class="swiper-wrapper">
-
-
-
+                    @foreach ($reviews as $review)
                     <div class="swiper-slide">
                         <div class="testi__oneitem radius32 py-5 py-xxl-8 px-4 px-xxl-8 position-relative"
                             data-aos="zoom-in" data-aos-duration="1500">
@@ -886,14 +512,13 @@
                                 </li>
                             </ul>
                             <p class="mb-5 mt-8 mb-xxl-8 pragraph n700-color">
-                                I owe my success to Lè Forum International. Their dedicated team and effective
-                                strategies made all the difference in my education.
+                                {{ $review -> review }}
                             </p>
                             <div class="d-flex align-items-center gap-2 gap-xxl-6">
                                 <!-- <img src="assets/images/common/cameron.png" alt="img" class="radius100"> -->
                                 <div class="cont">
                                     <span class="n700-color cameron d-block mb-0 mb-xl-1">
-                                        Thamanna Basheer
+                                        {{ $review -> name }}
                                     </span>
 
                                 </div>
@@ -906,183 +531,7 @@
                             </a>
                         </div>
                     </div>
-
-
-                    <div class="swiper-slide">
-                        <div class="testi__oneitem radius32 py-5 py-xxl-8 px-4 px-xxl-8 position-relative"
-                            data-aos="zoom-in" data-aos-duration="1500">
-                            <ul class="ratting d-flex align-items-center gap-1 gap-xl-2">
-                                <li>
-                                    <i class="ti ti-star-filled fs20 s1-color"></i>
-                                </li>
-                                <li>
-                                    <i class="ti ti-star-filled fs20 s1-color"></i>
-                                </li>
-                                <li>
-                                    <i class="ti ti-star-filled fs20 s1-color"></i>
-                                </li>
-                                <li>
-                                    <i class="ti ti-star-filled fs20e s1-color"></i>
-                                </li>
-                                <li>
-                                    <i class="ti ti-star-half-filled fs20 s1-color"></i>
-                                </li>
-                            </ul>
-                            <p class="mb-5 mt-8 mb-xxl-8 pragraph n700-color">
-                                Lè Forum International was instrumental in my academic journey. Their tailored strategic
-                                approach turned my aspirations into achievements.
-
-
-                            </p>
-                            <div class="d-flex align-items-center gap-2 gap-xxl-6">
-                                <!-- <img src="assets/images/common/cameron.png" alt="img" class="radius100"> -->
-                                <div class="cont">
-                                    <span class="n700-color cameron d-block mb-0 mb-xl-1">
-                                        Goutham Maheshwar
-                                    </span>
-
-                                </div>
-                            </div>
-                            <img src="{{ asset('frontstyles/assets/images/vectors/vector-white.png') }}"
-                                alt="img" class="cmn__white">
-                            <a href="#0"
-                                class="quote radius100 d-flex align-items-center justify-content-center">
-                                <i class="ti ti-quote fs-five n700-color"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="swiper-slide">
-                        <div class="testi__oneitem radius32 py-5 py-xxl-8 px-4 px-xxl-8 position-relative"
-                            data-aos="zoom-in" data-aos-duration="1500">
-                            <ul class="ratting d-flex align-items-center gap-1 gap-xl-2">
-                                <li>
-                                    <i class="ti ti-star-filled fs20 s1-color"></i>
-                                </li>
-                                <li>
-                                    <i class="ti ti-star-filled fs20 s1-color"></i>
-                                </li>
-                                <li>
-                                    <i class="ti ti-star-filled fs20 s1-color"></i>
-                                </li>
-                                <li>
-                                    <i class="ti ti-star-filled fs20e s1-color"></i>
-                                </li>
-                                <li>
-                                    <i class="ti ti-star-half-filled fs20 s1-color"></i>
-                                </li>
-                            </ul>
-                            <p class="mb-5 mt-8 mb-xxl-8 pragraph n700-color">
-                                My achievements are a testament to the excellence of Lè Forum International. Their
-                                committed mentors were pivotal in shaping my educational journey.
-                            </p>
-                            <div class="d-flex align-items-center gap-2 gap-xxl-6">
-                                <!-- <img src="assets/images/common/cameron.png" alt="img" class="radius100"> -->
-                                <div class="cont">
-                                    <span class="n700-color cameron d-block mb-0 mb-xl-1">
-                                        Laya Joseph
-                                    </span>
-
-                                </div>
-                            </div>
-                            <img src="{{ asset('frontstyles/assets/images/vectors/vector-white.png') }}"
-                                alt="img" class="cmn__white">
-                            <a href="#0"
-                                class="quote radius100 d-flex align-items-center justify-content-center">
-                                <i class="ti ti-quote fs-five n700-color"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="swiper-slide">
-                        <div class="testi__oneitem radius32 py-5 py-xxl-8 px-4 px-xxl-8 position-relative"
-                            data-aos="zoom-in" data-aos-duration="1500">
-                            <ul class="ratting d-flex align-items-center gap-1 gap-xl-2">
-                                <li>
-                                    <i class="ti ti-star-filled fs20 s1-color"></i>
-                                </li>
-                                <li>
-                                    <i class="ti ti-star-filled fs20 s1-color"></i>
-                                </li>
-                                <li>
-                                    <i class="ti ti-star-filled fs20 s1-color"></i>
-                                </li>
-                                <li>
-                                    <i class="ti ti-star-filled fs20e s1-color"></i>
-                                </li>
-                                <li>
-                                    <i class="ti ti-star-half-filled fs20 s1-color"></i>
-                                </li>
-                            </ul>
-                            <p class="mb-5 mt-8 mb-xxl-8 pragraph n700-color">
-                                At LeForum, I've found not just courses, but a supportive community that's transformed
-                                my learning experience. It's truly been a game-changer for me
-                            </p>
-                            <div class="d-flex align-items-center gap-2 gap-xxl-6">
-                                <!-- <img src="assets/images/common/cameron.png" alt="img" class="radius100"> -->
-                                <div class="cont">
-                                    <span class="n700-color cameron d-block mb-0 mb-xl-1">
-                                        Athira
-                                    </span>
-
-                                </div>
-                            </div>
-                            <img src="{{ asset('frontstyles/assets/images/vectors/vector-white.png') }}"
-                                alt="img" class="cmn__white">
-                            <a href="#0"
-                                class="quote radius100 d-flex align-items-center justify-content-center">
-                                <i class="ti ti-quote fs-five n700-color"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="swiper-slide">
-                        <div class="testi__oneitem radius32 py-5 py-xxl-8 px-4 px-xxl-8 position-relative"
-                            data-aos="zoom-in" data-aos-duration="1500">
-                            <ul class="ratting d-flex align-items-center gap-1 gap-xl-2">
-                                <li>
-                                    <i class="ti ti-star-filled fs20 s1-color"></i>
-                                </li>
-                                <li>
-                                    <i class="ti ti-star-filled fs20 s1-color"></i>
-                                </li>
-                                <li>
-                                    <i class="ti ti-star-filled fs20 s1-color"></i>
-                                </li>
-                                <li>
-                                    <i class="ti ti-star-filled fs20e s1-color"></i>
-                                </li>
-                                <li>
-                                    <i class="ti ti-star-half-filled fs20 s1-color"></i>
-                                </li>
-                            </ul>
-                            <p class="mb-5 mt-8 mb-xxl-8 pragraph n700-color">
-                                "LeForum's community transforms learning beyond courses, fostering camaraderie and
-                                growth. It celebrates success, revolutionizing my learning experience.”
-                            </p>
-                            <div class="d-flex align-items-center gap-2 gap-xxl-6">
-                                <!-- <img src="assets/images/common/cameron.png" alt="img" class="radius100"> -->
-                                <div class="cont">
-                                    <span class="n700-color cameron d-block mb-0 mb-xl-1">
-                                        Anagha
-                                    </span>
-
-                                </div>
-                            </div>
-                            <img src="{{ asset('frontstyles/assets/images/vectors/vector-white.png') }}"
-                                alt="img" class="cmn__white">
-                            <a href="#0"
-                                class="quote radius100 d-flex align-items-center justify-content-center">
-                                <i class="ti ti-quote fs-five n700-color"></i>
-                            </a>
-                        </div>
-                    </div>
-
-
-
-
-
-
+                    @endforeach
                 </div>
 
                 <div class="slider-btn mt-6 mt-lg-10 mb-2 px-5 d-center justify-content-center gap-3">
