@@ -8,20 +8,28 @@
         <div class='form-group row mb-4 align-middle'>
             <label class=" col-lg-3 required form-label">Question</label>
             <div class="col-lg-9">
-                <input type="text" class="form-control" value="" placeholder="Question here...!" name='question' required />
+                <input type="text" class="form-control" value="" placeholder="Question here...!" name='question'
+                    required />
             </div>
         </div>
         <div class='form-group row mb-4 align-middle'>
             <label class=" col-lg-3 required form-label">Answer</label>
             <div class="col-lg-9">
-                <input type="text" class="form-control" value="" placeholder="Answer here....!" name='answer' required />
+                <input type="text" class="form-control" value="" placeholder="Answer here....!" name='answer'
+                    required />
             </div>
         </div>
-        {{-- <div class="form-group">
-            <label for="exampleInputPassword1">Status</label>
-            <input type="radio" name="status" value="1">Active
-            <input type="radio" name="status" value="0">Inactive
-        </div> --}}
+        <div class='form-group row mb-4 align-middle'>
+            <label class="col-lg-3 required form-label">College</label>
+            <div class="col-lg-9">
+                <select class="form-select" name="college_id" required>
+                    <option value="">Select College</option>
+                    @foreach($colleges as $id => $name)
+                        <option value="{{ $id }}">{{ $name }}</option>
+                    @endforeach
+                </select>
+            </div>
+        </div>
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>

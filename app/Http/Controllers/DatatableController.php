@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\College;
+use App\Models\CollegeReview;
 use App\Models\Course;
 use App\Models\FAQ;
 use App\Models\Location;
@@ -512,55 +513,121 @@ class DatatableController extends Controller
 
     public function getAllFaqs()
     {
-        $faqs = FAQ::get();
+        $faqs = FAQ::with('college')->get(); // Ensure to load the college relationship
         return DataTables::of($faqs)
             ->addColumn('id', function ($faq) {
                 return $faq->id;
             })
             ->addColumn('question', function ($faq) {
-                if (isset($faq->question))
-                    return $faq->question;
-                else
-                    return 'Question Not Given';
+                return $faq->question;
             })
             ->addColumn('answer', function ($faq) {
-                if (isset($faq->answer))
-                    return $faq->answer;
-                else
-                    return 'Answer Not Given';
+                return $faq->answer;
             })
-
+            ->addColumn('college_name', function ($faq) {
+                return $faq->college ? $faq->college->name : 'College Name Not Given';
+            })
             ->addColumn('action', function ($faq) {
-
                 $html = '<ul class="nk-tb-actions gx-1 justify-content-center">
                 <li>
-                   <div class="drodown"><a href="#"
-                       class="dropdown-toggle btn btn-icon btn-trigger"
-                       data-bs-toggle="dropdown"><em class="icon ni ni-more-h"></em></a>
+                    <div class="drodown"><a href="#"
+                        class="dropdown-toggle btn btn-icon btn-trigger"
+                        data-bs-toggle="dropdown"><em class="icon ni ni-more-h"></em></a>
                     <div class="dropdown-menu dropdown-menu-end">
-                       <ul class="link-list-opt no-bdr">
-                           <li>
-                               <a href="' . route('admin.editFAQ', $faq->id) . '">
-                                   <em class="icon ni ni-edit"></em>
-                                   <span>Edit Courses</span>
-                               </a>
-                           </li>
-                           <li>
-                               <a data-bs-toggle="modal"
-                                   data-bs-target="#deletefaqs' . $faq->id . '">
-                                   <em class="icon ni ni-trash"></em>
-                                   <span>Delete Courses</span></span>
-                               </a>
-                           </li>
-                           </ui>
-                           </div>
-                           </div>
-                           </li>
-                           </ui>';
+                        <ul class="link-list-opt no-bdr">
+                            <li>
+                                <a href="' . route('admin.editFAQ', $faq->id) . '">
+                                    <em class="icon ni ni-edit"></em>
+                                    <span>Edit FAQ</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a data-bs-toggle="modal"
+                                    data-bs-target="#deletefaqs' . $faq->id . '">
+                                    <em class="icon ni ni-trash"></em>
+                                    <span>Delete FAQ</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    </div>
+                </li>
+            </ul>';
+                return $html;
+            })
+            ->rawColumns(['id', 'question', 'answer', 'college_name', 'action'])
+            ->make(true);
+    }
+
+
+    public function getAllCollegeReview()
+    {
+        $collegereviews = CollegeReview::get();
+        return DataTables::of($collegereviews)
+            ->addColumn('id', function ($collegereview) {
+                return $collegereview->id;
+            })
+            ->addColumn('name', function ($collegereview) {
+                return $collegereview->name ?? 'Name Not Given';
+            })
+            ->addColumn('position', function ($collegereview) {
+                return $collegereview->position ?? 'Position Not Given';
+            })
+            ->addColumn('review', function ($collegereview) {
+                return $collegereview->review ?? 'Review Not Given';
+            })
+            ->addColumn('image', function ($collegereview) {
+                if ($collegereview->image) {
+                    return '<img src="' . asset($collegereview->image) . '" alt="review Image" width="200" height="100">';
+                } else {
+                    return "-no image-";
+                }
+            })
+            ->addColumn('status', function ($collegereview) {
+
+                $success = '<div style="margin: 0 auto; text-align: center;"> <a class="btn btn-icon btn-success"
+            href="' . route('admin.toggleCollegeReview', $collegereview->id) . '">
+            <em class="icon ni ni-power"></em>
+            </a></div>';
+                $danger = '<div style="margin: 0 auto; text-align: center;"> <a class="btn btn-icon btn-danger"
+            href="' . route('admin.toggleCollegeReview', $collegereview->id) . '">
+            <em class="icon ni ni-power"></em>
+            </a></div>';
+                if ($collegereview->is_active == 1)
+                    return $success;
+                else
+                    return $danger;
+            })
+            ->addColumn('action', function ($collegereview) {
+                $html = '<ul class="nk-tb-actions gx-1">
+            <li>
+               <div class="drodown"><a href="#"
+                   class="dropdown-toggle btn btn-icon btn-trigger"
+                   data-bs-toggle="dropdown"><em class="icon ni ni-more-h"></em></a>
+                <div class="dropdown-menu dropdown-menu-end">
+                   <ul class="link-list-opt no-bdr">
+                       <li>
+                           <a href="' . route('admin.editCollegeReview', $collegereview->id) . '">
+                               <em class="icon ni ni-edit"></em>
+                               <span>Edit College Review</span>
+                           </a>
+                       </li>
+                       <li>
+                           <a data-bs-toggle="modal"
+                               data-bs-target="#deleteCollegeReview' . $collegereview->id . '">
+                               <em class="icon ni ni-trash"></em>
+                               <span>Delete College Review</span></span>
+                           </a>
+                       </li>
+                   </ul>
+                </div>
+               </div>
+            </li>
+        </ul>';
 
                 return $html;
             })
-            ->rawColumns(['id', 'question', 'answer', 'action'])
+            ->rawColumns(['id', 'name', 'position', 'review', 'status', 'image', 'action'])
             ->make(true);
     }
 

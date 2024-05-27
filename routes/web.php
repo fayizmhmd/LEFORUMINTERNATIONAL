@@ -4,6 +4,7 @@ use App\Http\Controllers\AboutUsController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CollegeController;
+use App\Http\Controllers\CollegeReviewController;
 use App\Http\Controllers\ContactUsController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\DashboardController;
@@ -89,6 +90,16 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/edit-FAQ/{id}', [FaqController::class, 'editFAQ'])->name('admin.editFAQ');
     Route::post('/update-FAQ-info/{id}', [FaqController::class, 'updateFAQ'])->name('admin.updateFAQ');
     Route::get('/admin/delete-FAQ/{id}', [FaqController::class, 'deleteFAQ'])->name('admin.deleteFAQ');
+
+    //College Review
+    Route::get('/view-CollegeReview', [CollegeReviewController::class, 'viewCollegeReview'])->name('admin.viewCollegeReview');
+    Route::get('/add-CollegeReview', [CollegeReviewController::class, 'addCollegeReview'])->name('admin.addCollegeReview');
+    Route::post('/save-CollegeReview', [CollegeReviewController::class, 'saveCollegeReviews'])->name('admin.saveCollegeReviews');
+    Route::get('/toggle-CollegeReview/{id}', [CollegeReviewController::class, 'toggleCollegeReview'])->name('admin.toggleCollegeReview');
+    Route::get('/edit-CollegeReview/{id}', [CollegeReviewController::class, 'editCollegeReview'])->name('admin.editCollegeReview');
+    Route::post('/update-CollegeReview-info/{id}', [CollegeReviewController::class, 'updateCollegeReview'])->name('admin.updateCollegeReview');
+    Route::get('/admin/delete-CollegeReview/{id}', [CollegeReviewController::class, 'deleteCollegeReview'])->name('admin.deleteCollegeReview');
+
 
 
     //Review
@@ -182,6 +193,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/get-all-courses-datatable', [DatatableController::class, 'getAllCourses'])->name('admin.getAllCourses');
     Route::get('/get-all-locations-datatable', [DatatableController::class, 'getAllLocations'])->name('admin.getAllLocations');
     Route::get('/get-all-faqs-datatable', [DatatableController::class, 'getAllFaqs'])->name('admin.getAllFaqs');
+    Route::get('/get-all-collegereview-datatable', [DatatableController::class, 'getAllCollegeReview'])->name('admin.getAllCollegeReview');
+
 
 
     Route::get('/get-all-subscription-datatable', [DatatableController::class, 'getAllSubscriptions'])->name('admin.getAllSubscriptions');

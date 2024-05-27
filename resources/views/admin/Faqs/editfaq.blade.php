@@ -17,6 +17,17 @@
                 <input type="text" class="form-control" value="{{ $faq->answer }}" placeholder="Answer here....!" name='answer' required />
             </div>
         </div>
+        <div class='form-group row mb-4 align-middle'>
+            <label class="col-lg-3 required form-label">College</label>
+            <div class="col-lg-9">
+                <select class="form-select" name="college_id" required>
+                    <option value="">Select College</option>
+                    @foreach($colleges as $id => $name)
+                        <option value="{{ $id }}">{{ $name }}</option>
+                    @endforeach
+                </select>
+            </div>
+        </div>
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>

@@ -117,6 +117,17 @@
                             </li>
                         @endcan
 
+                        @can('all_users')
+                            <li class="nk-menu-item ">
+                                <a href="{{ route('admin.viewCollegeReview') }}" class="nk-menu-link">
+                                    <span class="nk-menu-icon">
+                                        <em class="fa-regular fa-comment"></em>
+                                    </span>
+                                    <span class="nk-menu-text">College Reviews</span>
+                                </a>
+                            </li>
+                        @endcan
+
                         {{-- @can('all_users')
                             <li class="nk-menu-item ">
                                 <a href="{{ route('admin.viewCourses') }}" class="nk-menu-link">

@@ -27,6 +27,7 @@
                                 <th class="text-center">Id</th>
                                 <th >Question</th>
                                 <th>Answer</th>
+                                <th>College</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -88,15 +89,17 @@
         columns: [
             { data: 'id' },
             { data: 'question', sortable: false },
-            { data: 'answer', sortable: false }, // Ensure 'answer' matches your data source
+            { data: 'answer', sortable: false },
+            { data: 'college_name', sortable: false }, // Changed to display college name
             { data: 'action', sortable: false },
         ],
     });
     var search = document.querySelector('.search');
-    html = search.innerHTML
+    var html = search.innerHTML;
     search.innerHTML = '<span class="fw-3 px-2">Show</span>' + html +
-        '<span class="fw-3 px-2">Entries</span>'
+        '<span class="fw-3 px-2">Entries</span>';
 });
+
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
