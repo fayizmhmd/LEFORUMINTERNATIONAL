@@ -8,6 +8,7 @@ use App\Http\Controllers\ContactUsController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DatatableController;
+use App\Http\Controllers\FaqController;
 use App\Http\Controllers\FrontEndController;
 use App\Http\Controllers\LocationController;
 use App\Http\Controllers\PermissionController;
@@ -79,7 +80,15 @@ Route::middleware(['auth'])->group(function () {
 
 
     //College view in a page
-    Route::get('/viewone-colleges/{id}', [CollegeController::class, 'viewone'])->name('admin.viewOneColleges');
+    Route::get('/viewone-colleges/{id}', [CollegeController::class, 'viewone'])->name('front.viewOneColleges');
+
+    //College FAQ
+    Route::get('/view-FAQ', [FaqController::class, 'viewFAQ'])->name('admin.viewFAQ');
+    Route::get('/add-FAQ', [FaqController::class, 'addFAQ'])->name('admin.addFAQ');
+    Route::post('/save-FAQ', [FaqController::class, 'saveFAQ'])->name('admin.saveFAQ');
+    Route::get('/edit-FAQ/{id}', [FaqController::class, 'editFAQ'])->name('admin.editFAQ');
+    Route::post('/update-FAQ-info/{id}', [FaqController::class, 'updateFAQ'])->name('admin.updateFAQ');
+    Route::get('/admin/delete-FAQ/{id}', [FaqController::class, 'deleteFAQ'])->name('admin.deleteFAQ');
 
 
     //Review
@@ -172,6 +181,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/get-all-reviews-datatable', [DatatableController::class, 'getAllReviews'])->name('admin.getAllReviews');
     Route::get('/get-all-courses-datatable', [DatatableController::class, 'getAllCourses'])->name('admin.getAllCourses');
     Route::get('/get-all-locations-datatable', [DatatableController::class, 'getAllLocations'])->name('admin.getAllLocations');
+    Route::get('/get-all-faqs-datatable', [DatatableController::class, 'getAllFaqs'])->name('admin.getAllFaqs');
+
 
     Route::get('/get-all-subscription-datatable', [DatatableController::class, 'getAllSubscriptions'])->name('admin.getAllSubscriptions');
     Route::get('/get-report-subscription-datatable', [DatatableController::class, 'getReportSubscription'])->name('admin.getReportSubscription');

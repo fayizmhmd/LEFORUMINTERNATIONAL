@@ -145,21 +145,30 @@ class CollegeController extends Controller
         }
     }
 
-    public function viewone($slug)
+    // public function viewone($slug)
+    // {
+    //     $college = College::where('slug', $slug)->firstOrFail();
+
+    //     // Generate and assign slug if not already generated
+    //     if (!$college->slug) {
+    //         $slug = Str::slug($college->name);
+    //         $uniqueSlug = College::where('slug', $slug)->where('id', '!=', $college->id)->exists();
+    //         if ($uniqueSlug) {
+    //             $slug .= '-' . uniqid();
+    //         }
+    //         $college->slug = $slug;
+    //         $college->save();
+    //     }
+
+    //     return view('frontend.viewonecollege', compact('college'));
+    // }
+
+    public function viewOne($id)
     {
-        $college = College::where('slug', $slug)->firstOrFail();
+        // Fetch the college data based on the ID
+        $college = College::findOrFail($id);
 
-        // Generate and assign slug if not already generated
-        if (!$college->slug) {
-            $slug = Str::slug($college->name);
-            $uniqueSlug = College::where('slug', $slug)->where('id', '!=', $college->id)->exists();
-            if ($uniqueSlug) {
-                $slug .= '-' . uniqid();
-            }
-            $college->slug = $slug;
-            $college->save();
-        }
-
-        return view('admin.colleges.viewonecollege', compact('college'));
+        // Return a view with the college data
+        return view('frontend.viewonecollege', compact('college'));
     }
 }

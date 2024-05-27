@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\College;
 use App\Models\Course;
+use App\Models\FAQ;
 use App\Models\Location;
 use App\Models\Plan;
 use App\Models\Review;
@@ -506,6 +507,64 @@ class DatatableController extends Controller
             ->rawColumns(['id', 'name', 'status', 'action'])
             ->make(true);
     }
+
+
+
+    public function getAllFaqs()
+    {
+        $faqs = FAQ::get();
+        return DataTables::of($faqs)
+            ->addColumn('id', function ($faq) {
+                return $faq->id;
+            })
+            ->addColumn('question', function ($faq) {
+                if (isset($faq->question))
+                    return $faq->question;
+                else
+                    return 'Question Not Given';
+            })
+            ->addColumn('answer', function ($faq) {
+                if (isset($faq->answer))
+                    return $faq->answer;
+                else
+                    return 'Answer Not Given';
+            })
+
+            ->addColumn('action', function ($faq) {
+
+                $html = '<ul class="nk-tb-actions gx-1 justify-content-center">
+                <li>
+                   <div class="drodown"><a href="#"
+                       class="dropdown-toggle btn btn-icon btn-trigger"
+                       data-bs-toggle="dropdown"><em class="icon ni ni-more-h"></em></a>
+                    <div class="dropdown-menu dropdown-menu-end">
+                       <ul class="link-list-opt no-bdr">
+                           <li>
+                               <a href="' . route('admin.editFAQ', $faq->id) . '">
+                                   <em class="icon ni ni-edit"></em>
+                                   <span>Edit Courses</span>
+                               </a>
+                           </li>
+                           <li>
+                               <a data-bs-toggle="modal"
+                                   data-bs-target="#deletefaqs' . $faq->id . '">
+                                   <em class="icon ni ni-trash"></em>
+                                   <span>Delete Courses</span></span>
+                               </a>
+                           </li>
+                           </ui>
+                           </div>
+                           </div>
+                           </li>
+                           </ui>';
+
+                return $html;
+            })
+            ->rawColumns(['id', 'question', 'answer', 'action'])
+            ->make(true);
+    }
+
+
 
 
     public function getAllSubscriptions(Request $request)

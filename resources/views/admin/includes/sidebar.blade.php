@@ -106,6 +106,17 @@
                             </li>
                         @endcan
 
+                        @can('all_users')
+                            <li class="nk-menu-item ">
+                                <a href="{{ route('admin.viewFAQ') }}" class="nk-menu-link">
+                                    <span class="nk-menu-icon">
+                                        <em class="fa-solid fa-question"></em>
+                                    </span>
+                                    <span class="nk-menu-text">College FAQ's</span>
+                                </a>
+                            </li>
+                        @endcan
+
                         {{-- @can('all_users')
                             <li class="nk-menu-item ">
                                 <a href="{{ route('admin.viewCourses') }}" class="nk-menu-link">

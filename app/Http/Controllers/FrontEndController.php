@@ -8,6 +8,7 @@ use App\Models\College;
 use App\Models\Course;
 use App\Models\Location;
 use App\Models\Review;
+use App\Models\Setting;
 use Illuminate\Http\Request;
 
 class FrontEndController extends Controller
@@ -21,7 +22,15 @@ class FrontEndController extends Controller
         $reviews = Review::all();
         $courses = Course::all();
         $locations = Location::all();
-        return view('frontend.home', compact('categories', 'colleges', 'reviews', 'courses', 'locations','type_colleges','type_universities'));
+
+        $phone_number = Setting::where('key', 'phone_number')->first()->value;
+        $mail_id = Setting::where('key', 'mail_id')->first()->value;
+        $facebook = Setting::where('key', 'facebook')->first()->value;
+        $instagram = Setting::where('key', 'instagram')->first()->value;
+        $whatsapp = Setting::where('key', 'whatsapp')->first()->value;
+        $youtube = Setting::where('key', 'youtube')->first()->value;
+
+        return view('frontend.home', compact('categories', 'colleges', 'reviews', 'courses', 'locations','type_colleges','type_universities','phone_number','mail_id','facebook','instagram','whatsapp','youtube'));
     }
 
     public function allcolleges(Request $request)

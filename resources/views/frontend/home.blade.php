@@ -370,7 +370,7 @@
                                     tutors!
                                 </p>
                             </div>
-                            <a href="contact.html" class="kewta-btn d-inline-flex align-items-center"
+                            <a href="{{ route('front.viewContactUs') }}" class="kewta-btn d-inline-flex align-items-center"
                                 data-aos="zoom-in-right" data-aos-duration="1000">
                                 <span class="kew-text n0-color">
                                     Contact Us
@@ -428,7 +428,7 @@
                             <div class="content pt-5 pt-xxl-6 px-0 px-xl-3 px-xxl-4 pb-xxl-4 pb-3">
 
                                 <h4 class="mb-4 mb-xl-5">
-                                    <a href="colleges-details1.html" class="ptext">
+                                    <a href="{{ route('front.viewOneColleges', ['id' => $college->id]) }}" class="ptext">
                                         {{ $college->name }}
                                     </a>
                                 </h4>
@@ -575,24 +575,24 @@
                             </p>
                             <ul class="social-area d-flex gap-3 gap-xl-4">
                                 <li>
-                                    <a href="https://www.facebook.com/leforuminternational?mibextid=ZbWKwL"
+                                    <a href="{{ $facebook }}"
                                         target="_blank" class="d-center">
                                         <i class="ti ti-brand-facebook fw_400 fs-five"></i>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="https://www.instagram.com/leforuminternational/" target="_blank"
+                                    <a href="{{ $instagram }}" target="_blank"
                                         class="d-center">
                                         <i class="ti ti-brand-instagram fw_400 fs-five"></i>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="https://wa.me/+97433651797" target="_blank" class="d-center">
+                                    <a href="{{ $whatsapp }}" target="_blank" class="d-center">
                                         <i class="fab fa-whatsapp fw_400 fs-five"></i>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="https://www.youtube.com/@LeForumInternational" target="_blank"
+                                    <a href="{{ $youtube }}" target="_blank"
                                         class="d-center">
                                         <i class="fab fa-youtube fw_400 fs-five"></i>
                                     </a>
@@ -615,8 +615,8 @@
                                         <i class="ti ti-phone fs-five fw_400"></i>
                                     </span>
                                     <a href="#" class="p1hover">
-                                        +974 33651797
-
+                                        {{-- {{ \App\Models\Setting::where('key','phone_number')->first()->value }} --}}
+                                        {{ $phone_number }}
                                     </a>
                                 </li>
                                 <li class="d-flex gap-3 gap-xl-5 mb-4 mb-xl-6">
@@ -624,7 +624,7 @@
                                         <i class="ti ti-mail-opened fs-five fw_400"></i>
                                     </span>
                                     <a href="#0" class="p1hover">
-                                        info@leforuminternational.com
+                                        {{ $mail_id }}
 
                                     </a>
                                 </li>
