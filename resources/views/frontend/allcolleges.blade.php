@@ -75,7 +75,7 @@
 
                     <nav class="navbar-custom">
                         <div class="d-flex align-items-center justify-content-between">
-                            <a href="index.html" class="nav-brand d-block d-lg-none">
+                            <a href="{{ route('front.allcolleges') }}" class="nav-brand d-block d-lg-none">
                                 <img style="width: 200px" class="d-none d-md-block"
                                     src="{{ $path }}frontstyles/assets/images/le-logo-white-12.png"
                                     alt="logo" />
@@ -96,7 +96,7 @@
                         <div class="navbar-toggle-item cus__scroll">
                             <div
                                 class="d-flex gap-5 flex-column flex-lg-row align-items-start align-items-lg-center justify-content-between mt-5 mt-lg-0">
-                                <a href="index.html" class="navbar-brand logo">
+                                <a href="{{ route('front.allcolleges') }}" class="navbar-brand logo">
                                     <img style="width: 70px" class=""
                                         src="{{ $path }}frontstyles/assets/images/le-logo-gold-EMBLEM.png"
                                         alt="logo" />
@@ -178,16 +178,14 @@
                                                         data-aos-duration="1500">
                                                         <div class="thumb over w-100 position-relative">
                                                             <img style="height: 200px;"
-                                                                src="{{ $path }}frontstyles/assets/images/colleges/mcc.jpeg"
+                                                                src="{{ $path . json_decode($college->image, true)[0] }}"
                                                                 class="w-100 radius32 mimg" alt="img" />
-
-
                                                         </div>
                                                         <div
                                                             class="content pt-5 pt-xxl-6 px-0 px-xl-3 px-xxl-4 pb-xxl-4 pb-3">
 
                                                             <h4 class="mb-4 mb-xl-5">
-                                                                <a href="colleges-details1.html" class="ptext">
+                                                                <a href="{{ route('front.viewOneColleges', ['id' => $college->id]) }}" class="ptext">
                                                                     {{ $college -> name }}
                                                                 </a>
                                                             </h4>

@@ -570,15 +570,15 @@ class DatatableController extends Controller
             ->addColumn('name', function ($collegereview) {
                 return $collegereview->name ?? 'Name Not Given';
             })
-            ->addColumn('position', function ($collegereview) {
-                return $collegereview->position ?? 'Position Not Given';
+            ->addColumn('college_name', function ($collegereview) {
+                return $collegereview->college ? $collegereview->college->name : 'College Name Not Given';
             })
             ->addColumn('review', function ($collegereview) {
                 return $collegereview->review ?? 'Review Not Given';
             })
             ->addColumn('image', function ($collegereview) {
                 if ($collegereview->image) {
-                    return '<img src="' . asset($collegereview->image) . '" alt="review Image" width="200" height="100">';
+                    return '<img src="' . asset($collegereview->image) . '" alt="review Image" width="200" height="90">';
                 } else {
                     return "-no image-";
                 }

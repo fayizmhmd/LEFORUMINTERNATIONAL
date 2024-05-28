@@ -10,8 +10,13 @@ class CollegeReview extends Model
     use HasFactory;
 
     public function toggleActive()
-{
-    // Toggle the active status
-    $this->is_active = !$this->is_active;
-}
+    {
+        // Toggle the active status
+        $this->is_active = !$this->is_active;
+    }
+
+    public function college()
+    {
+        return $this->belongsTo(College::class);
+    }
 }

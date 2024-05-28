@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\College;
+use App\Models\CollegeReview;
 use App\Models\Course;
+use App\Models\FAQ;
 use App\Models\Location;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
@@ -165,10 +167,10 @@ class CollegeController extends Controller
 
     public function viewOne($id)
     {
-        // Fetch the college data based on the ID
         $college = College::findOrFail($id);
+        $faqs = FAQ::where('college_id',$college->id)->get();
+        $collegereviews = CollegeReview::where('college_id',$college->id)->get();
 
-        // Return a view with the college data
-        return view('frontend.viewonecollege', compact('college'));
+        return view('frontend.viewonecollege', compact('college','faqs','collegereviews'));
     }
 }

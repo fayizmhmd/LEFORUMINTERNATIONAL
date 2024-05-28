@@ -90,7 +90,7 @@
             columns: [
                 { data: 'id' },
                 { data: 'name', sortable: false },
-                { data: 'position', sortable: false },
+                { data: 'college_name', sortable: false },
                 { data: 'image', sortable: false },
                 { data: 'review', sortable: false },
                 { data: 'status', sortable: false },

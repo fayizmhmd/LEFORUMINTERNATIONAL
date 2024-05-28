@@ -17,14 +17,25 @@
         <div class='form-group row mb-4 align-middle'>
             <label class=" col-lg-3 required form-label">Image</label>
             <div class="col-lg-9">
-                <input type="file" class="form-control" placeholder="Browse image" name='image' required />
+                <input type="file" class="form-control" placeholder="Browse image" name='image' required /><br>
+            </div>
+            <div class="row">
+                @if ($collegereview->image)
+                    <div class="col-md-8 offset-md-4 mb-2">
+                        <img src="{{ asset($collegereview->image) }}" class="img-thumbnail" alt="College Review Image" style="max-width: 100%; height: 100px; display: block; margin-left: auto; margin-right: auto;">
+                    </div>
+                @endif
             </div>
         </div>
         <div class='form-group row mb-4 align-middle'>
-            <label class=" col-lg-3 required form-label">College/University</label>
+            <label class="col-lg-3 required form-label">College/Position</label>
             <div class="col-lg-9">
-                <input type="text" class="form-control" value="{{ $collegereview->position }}"
-                    placeholder="College/University" name='position' required />
+                <select class="form-select" name="college_id" required>
+                    <option value="">Select College</option>
+                    @foreach($colleges as $id => $name)
+                        <option value="{{ $id }}" {{ $id == $collegereview->college_id ? 'selected' : '' }}>{{ $name }}</option>
+                    @endforeach
+                </select>
             </div>
         </div>
         <div class='form-group row mb-4 align-middle'>

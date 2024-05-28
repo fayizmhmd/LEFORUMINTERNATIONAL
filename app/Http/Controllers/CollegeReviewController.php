@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Models\College;
 use App\Models\CollegeReview;
 use Illuminate\Http\Request;
 
@@ -17,7 +18,8 @@ class CollegeReviewController extends Controller
     public function addCollegeReview()
     {
         $collegereviews = CollegeReview::all();
-        return view('admin.collegeReview.addcollegereview', compact('collegereviews'));
+        $colleges = College::pluck('name', 'id');
+        return view('admin.collegeReview.addcollegereview', compact('collegereviews','colleges'));
     }
 
     public function saveCollegeReviews(Request $request)
@@ -26,6 +28,9 @@ class CollegeReviewController extends Controller
         $collegereview->name = $request->name;
         $collegereview->position = $request->position;
         $collegereview->review = $request->review;
+        $collegereview->college_id = $request->college_id;
+
+
 
         if ($request->file('image')) {
             $file = $request->file('image');
@@ -49,7 +54,8 @@ class CollegeReviewController extends Controller
     public function editCollegeReview($id)
     {
         $collegereview = CollegeReview::find($id);
-        return view('admin.collegeReview.editcollegereview', compact('collegereview', 'id'));
+        $colleges = College::pluck('name', 'id');
+        return view('admin.collegeReview.editcollegereview', compact('collegereview', 'id','colleges'));
     }
 
 
@@ -64,6 +70,8 @@ class CollegeReviewController extends Controller
         $collegereview->name = $request->name;
         $collegereview->position = $request->position;
         $collegereview->review = $request->review;
+        $collegereview->college_id = $request->college_id;
+
 
         if ($request->file('image')) {
             $file = $request->file('image');

@@ -18,10 +18,14 @@
             </div>
         </div>
         <div class='form-group row mb-4 align-middle'>
-            <label class=" col-lg-3 required form-label">College/University</label>
+            <label class="col-lg-3 required form-label">College/Position</label>
             <div class="col-lg-9">
-                <input type="text" class="form-control" value="" placeholder="College/University" name='position'
-                    required />
+                <select class="form-select" name="college_id" required>
+                    <option value="">Select College</option>
+                    @foreach($colleges as $id => $name)
+                        <option value="{{ $id }}">{{ $name }}</option>
+                    @endforeach
+                </select>
             </div>
         </div>
         <div class='form-group row mb-4 align-middle'>
