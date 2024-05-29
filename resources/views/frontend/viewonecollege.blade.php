@@ -124,21 +124,21 @@
                                 </a>
                                 <ul class="custom-nav d-lg-flex d-grid gap-4 gap-xl-6">
                                     <li class="menu-item itembg__1 position-relative">
-                                        <a href="index.html" class="fw_500 n0-color">Home</a>
+                                        <a href="{{ route('admin.home') }}" class="fw_500 n0-color">Home</a>
 
                                     </li>
 
                                     <li class="menu-item itembg__1 position-relative">
-                                        <a href="course-profile.html" class="fw_500 n0-color">Colleges</a>
+                                        <a href="{{ route('front.allcolleges') }}" class="fw_500 n0-color">Colleges</a>
 
 
                                     </li>
                                     <li class="menu-item itembg__1 position-relative">
-                                        <a href="about.html" class="fw_500 n0-color">About Us</a>
+                                        <a href="{{ route('front.viewAboutUs') }}" class="fw_500 n0-color">About Us</a>
                                     </li>
 
                                     <li class="menu-item itembg__1 position-relative">
-                                        <a href="contact.html" class="fw_500"> Contact Us </a>
+                                        <a href="{{ route('front.viewContactUs') }}" class="fw_500"> Contact Us </a>
                                     </li>
                                 </ul>
 

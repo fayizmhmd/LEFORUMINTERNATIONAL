@@ -31,6 +31,49 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.36.0/tabler-icons.min.css">
 
     <link rel="stylesheet" href="{{ asset('frontstyles/assets/css/style.min.css') }}">
+
+    <style>
+        @media (max-width: 768px) {
+            .mobile-only {
+            display: block;
+            }
+
+            .desktop-only {
+                display: none;
+            }
+        }
+
+        @media (min-width: 769px) {
+            .mobile-only {
+                display: none;
+            }
+
+            .desktop-only {
+                display: block;
+            }
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 100px;
+            right: 40px;
+            background-color: #25D366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 1px 1px 3px #999;
+            z-index: 100;
+        }
+
+        .my-float {
+            margin-top: 16px;
+            color: #FFF;
+        }
+    </style>
+
 </head>
 
 <body>
@@ -42,6 +85,11 @@
             class="bookicon-preloader">
     </div>
     <!-- end preloader -->
+
+    <!-- whatsapp button -->
+    <a href="{{ $whatsapp }}" class="whatsapp-float" target="_blank" style="text-decoration: none !important;">
+        <i class="fab fa-whatsapp my-float"></i>
+    </a>
 
     <!-- Scroll To Top Start-->
     <button class="scrollToTop d-md-flex d-center" aria-label="scroll Bar Button"><i
@@ -558,110 +606,4 @@
     <!-- testimonial end -->
 
     <!-- footer Start -->
-    <footer class="footer__one bg1-color">
-        <div class="footer__topone pt-120 pb-120">
-            <div class="container">
-                <div class="row g-4 justify-content-between">
-                    <div class="col-xxl-5 col-xl-5 col-lg-5 col-md-6 col-sm-6">
-                        <div class="footer__onewidget">
-                            <span class="display-five n0-color mb-5 mb-md-8">
-                                <span class="p1-color">
-                                    Let’s
-                                </span> Work Together
-                            </span>
-                            <p class="n0-color mb-5 mb-md-8">
-                                Explore LeForum's dynamic courses, where excellence meets opportunity. Elevate your
-                                personal and professional growth with top-tier education.
-                            </p>
-                            <ul class="social-area d-flex gap-3 gap-xl-4">
-                                <li>
-                                    <a href="{{ $facebook }}"
-                                        target="_blank" class="d-center">
-                                        <i class="ti ti-brand-facebook fw_400 fs-five"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="{{ $instagram }}" target="_blank"
-                                        class="d-center">
-                                        <i class="ti ti-brand-instagram fw_400 fs-five"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="{{ $whatsapp }}" target="_blank" class="d-center">
-                                        <i class="fab fa-whatsapp fw_400 fs-five"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="{{ $youtube }}" target="_blank"
-                                        class="d-center">
-                                        <i class="fab fa-youtube fw_400 fs-five"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-xxl-3  col-xl-3 col-lg-3 col-md-4 col-sm-4" data-aos="zoom-out"
-                        data-aos-duration="1600">
-
-                    </div>
-                    <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-6">
-                        <div class="footer__onewidget__link">
-                            <h4 class="n0-color mb-5 mb-md-8">
-                                Contact Us
-                            </h4>
-                            <ul class="widget__contactone">
-                                <li class="d-flex gap-3 gap-xl-5 mb-4 mb-xl-6">
-                                    <span class="icon cmn__social d-center">
-                                        <i class="ti ti-phone fs-five fw_400"></i>
-                                    </span>
-                                    <a href="#" class="p1hover">
-                                        {{-- {{ \App\Models\Setting::where('key','phone_number')->first()->value }} --}}
-                                        {{ $phone_number }}
-                                    </a>
-                                </li>
-                                <li class="d-flex gap-3 gap-xl-5 mb-4 mb-xl-6">
-                                    <span class="icon cmn__social d-center">
-                                        <i class="ti ti-mail-opened fs-five fw_400"></i>
-                                    </span>
-                                    <a href="#0" class="p1hover">
-                                        {{ $mail_id }}
-
-                                    </a>
-                                </li>
-
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="footer__bottomone">
-            <div class="container">
-                <div
-                    class="footer__bottomone__content bt-dash d-grid justify-content-center text-center  py-6 py-lg-10 d-md-flex align-items-center justify-content-lg-between gap-2 gap-md-15">
-                    <p class="fs-seven n0-color">
-                        © 2024 Le Forum | Powered by <a href="https://howincloud.com/"
-                            class="link-hover-dark-primary font-weight-semibold" target="_blank"><span
-                                style="font-size: 16px; font-weight: bolder; color: white">Howin </span><span
-                                style="font-size: 13px; font-weight: 600; color: white">CLOUD</span></a>
-                    </p>
-
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!-- footer end -->
-
-
-    <!-- ==== js dependencies start ==== -->
-    <script src="{{ asset('frontstyles/assets/js/plugins/plugins.js') }}"></script>
-    <script src="{{ asset('frontstyles/assets/js/plugins/plugin-custom.js') }}"></script>
-    <script src="{{ asset('frontstyles/assets/js/apexcharts.js') }}"></script>
-    <script src="{{ asset('frontstyles/assets/js/plugins/aos.js') }}"></script>
-    <script src="{{ asset('frontstyles/assets/js/main.js') }}"></script>
-
-</body>
-
-
-
-</html>
+@include('frontend.layouts.footer')

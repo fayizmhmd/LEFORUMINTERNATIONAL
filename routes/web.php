@@ -143,9 +143,11 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/view-aboutus', [AboutUsController::class, 'AboutUs'])->name('front.viewAboutUs');
     //contact-us
     Route::get('/view-contactus', [ContactUsController::class, 'ContactUs'])->name('front.viewContactUs');
+
     //mail from user
     Route::post('/view-mails', [ContactUsController::class, 'contactmail'])->name('front.contactmail');
     Route::get('/view-contactform', [ContactUsController::class, 'viewcontactform'])->name('front.viewcontactform');
+
     //Search
     Route::get('/course', [CourseController::class, 'search'])->name('front.course');
     //location search
