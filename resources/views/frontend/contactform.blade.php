@@ -13,7 +13,7 @@
                 <th>Name</th>
                 <th>Email</th>
                 <th>Subject</th>
-                <th>Message</th>
+                {{-- <th>Message</th> --}}
             </tr>
         </thead>
         <tbody>
@@ -23,7 +23,7 @@
                 <td>{{ $contactForm->name }}</td>
                 <td>{{ $contactForm->email }}</td>
                 <td>{{ $contactForm->subject }}</td>
-                <td>{{ $contactForm->message }}</td>
+                {{-- <td>{{ $contactForm->message }}</td> --}}
             </tr>
             @endforeach
         </tbody>

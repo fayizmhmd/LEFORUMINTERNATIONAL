@@ -18,14 +18,14 @@
                 <input type="file" class="form-control" placeholder="Browse image" name='image' required />
             </div>
         </div>
-        <img src="{{ asset('storage/images/' . $review->image) }}" width="100" alt="">
-        <div class='form-group row mb-4 align-middle'>
+        {{-- <img src="{{ asset('storage/images/' . $review->image) }}" width="100" alt=""> --}}
+        {{-- <div class='form-group row mb-4 align-middle'>
             <label class=" col-lg-3 required form-label">College/University</label>
             <div class="col-lg-9">
                 <input type="text" class="form-control" value="{{ $review->position }}" placeholder="College/University"
                     name='position' required />
             </div>
-        </div>
+        </div> --}}
         <div class='form-group row mb-4 align-middle'>
             <label class="col-lg-3 required form-label">Review</label>
             <div class="col-lg-9">

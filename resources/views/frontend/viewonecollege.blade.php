@@ -242,7 +242,8 @@
                                                     </h5>
                                                     <div class="fs-seven">
                                                         <div class="n700-color" style="margin-bottom: 20px;">
-                                                            {{ substr(strip_tags($college->description), 0, 20000) }}
+                                                            {!! $college->description !!}
+
                                                         </div>
                                                     </div>
                                                 </div>
