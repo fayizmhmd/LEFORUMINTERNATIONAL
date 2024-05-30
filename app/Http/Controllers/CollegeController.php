@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
 use App\Models\College;
 use App\Models\CollegeReview;
 use App\Models\Course;
@@ -26,7 +27,8 @@ class CollegeController extends Controller
         $colleges = College::all();
         $locations = Location::all();
         $courses = Course::all();
-        return view('admin.colleges.addcolleges', compact('colleges', 'locations', 'courses'));
+        $categories = Category::all();
+        return view('admin.colleges.addcolleges', compact('colleges', 'locations', 'courses','categories'));
     }
 
     public function saveColleges(Request $request)
@@ -34,6 +36,8 @@ class CollegeController extends Controller
         $college               =   new College();
         $college->name         =   $request->name;
         $college->rating = $request->rating;
+        $college->category_id = $request->category_id;
+
 
         $college->description = $request->summernote;
 
@@ -75,7 +79,8 @@ class CollegeController extends Controller
         $colleges = College::find($id);
         $locations = Location::all();
         $courses = Course::all();
-        return view('admin.colleges.editcolleges', compact('colleges', 'id', 'locations', 'courses'));
+        $categories = Category::all();
+        return view('admin.colleges.editcolleges', compact('colleges', 'id', 'locations', 'courses','categories'));
     }
 
     public function updateCollege(Request $request, $id)
@@ -83,6 +88,8 @@ class CollegeController extends Controller
         $college = College::find($id);
         $college->name = $request->name;
         $college->rating = $request->rating;
+
+        $college->category_id = $request->category_id;
 
         $slug = Str::slug($request->name);
         $uniqueSlug = College::where('slug', $slug)->where('id', '!=', $id)->exists();

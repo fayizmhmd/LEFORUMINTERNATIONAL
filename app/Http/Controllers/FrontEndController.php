@@ -70,6 +70,23 @@ class FrontEndController extends Controller
         $locations = Location::all();
 
         // Pass colleges and locations to the view
-        return view('frontend.allcolleges', compact('colleges', 'locations','phone_number', 'mail_id', 'facebook', 'instagram', 'whatsapp', 'youtube'));
+        return view('frontend.allcolleges', compact('colleges', 'locations', 'phone_number', 'mail_id', 'facebook', 'instagram', 'whatsapp', 'youtube'));
+    }
+
+
+
+    public function listByCategory($id)
+    {
+        $category = Category::findOrFail($id);
+        $colleges = College::where('category_id', $id)->get();
+
+        $phone_number = Setting::where('key', 'phone_number')->first()->value;
+        $mail_id = Setting::where('key', 'mail_id')->first()->value;
+        $facebook = Setting::where('key', 'facebook')->first()->value;
+        $instagram = Setting::where('key', 'instagram')->first()->value;
+        $whatsapp = Setting::where('key', 'whatsapp')->first()->value;
+        $youtube = Setting::where('key', 'youtube')->first()->value;
+
+        return view('frontend.CategoryListClgs', compact('category', 'colleges','phone_number', 'mail_id', 'facebook', 'instagram', 'whatsapp', 'youtube'));
     }
 }

@@ -35,7 +35,7 @@
     <style>
         @media (max-width: 768px) {
             .mobile-only {
-            display: block;
+                display: block;
             }
 
             .desktop-only {
@@ -89,7 +89,7 @@
     <!-- whatsapp button -->
     <a href="{{ $whatsapp }}" class="whatsapp-float" target="_blank" style="text-decoration: none !important;">
         <i class="fab fa-whatsapp my-float"></i>
-    </a>
+        </a>
 
     <!-- Scroll To Top Start-->
     <button class="scrollToTop d-md-flex d-center" aria-label="scroll Bar Button"><i
@@ -260,8 +260,9 @@
         <div class="container">
             <div class="row g-6 justify-content-center">
                 @foreach ($categories as $category)
-                    <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-4 col-sm-6" data-aos="zoom-in-right"
-                        data-aos-duration="1200">
+                <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-4 col-sm-6" data-aos="zoom-in-right"
+                    data-aos-duration="1200">
+                    <a href="{{ route('admin.listByCategory', ['id' => $category->id]) }}" class="">
                         <div
                             class="chart-your-course online-courseitem online-courseitem-v2  radius16 cus-border border py-5 py-xl-8 py-xxl-10 px-4">
                             <!-- //online-courseitem online-courseitem-v2 -->
@@ -270,31 +271,30 @@
                             </div>
                             <div class="contbox d-flex align-items-center justify-content-between gap-2">
                                 <div class="cont">
-                                    <h5 class="n700-color mb-2">
+                                    <h5 style="font-size: 14px;" class="n700-color mb-2">
                                         {{ $category->name }}
                                     </h5>
                                     <!-- <a href="browse-courses.html" class="cor n700-color">
                                     1,956 Courses
                                 </a> -->
                                 </div>
-                                <a href="itcolleges.html" class="">
-                                    <i class="ti ti-arrow-up-right s2-color fs-five"></i>
-                                </a>
+
+                                <i class="ti ti-arrow-up-right s2-color fs-five"></i>
+
                             </div>
                         </div>
-                    </div>
+                    </a>
+                </div>
                 @endforeach
             </div>
-
-            <div class="m-auto text-center mt-8 mt-xl-10" data-aos="zoom-in" data-aos-duration="1800">
-                <a href="#"
-                    class="cmn-btn d-inline-flex justify-content-center second-alt n700-color gap-2 d-flex align-items-center radius30 py-2 py-xxl-3 px-xxl-6 px-5">
+            <!-- <div class="m-auto text-center mt-8 mt-xl-10" data-aos="zoom-in" data-aos-duration="1800">
+                <a href="#" class="cmn-btn d-inline-flex justify-content-center second-alt n700-color gap-2 d-flex align-items-center radius30 py-2 py-xxl-3 px-xxl-6 px-5">
                     <span>
                         See All
                     </span>
                     <i class="ti ti-arrow-up-right"></i>
                 </a>
-            </div>
+            </div> -->
         </div>
     </section>
     <!-- online courses end -->
@@ -418,8 +418,9 @@
                                     tutors!
                                 </p>
                             </div>
-                            <a href="{{ route('front.viewContactUs') }}" class="kewta-btn d-inline-flex align-items-center"
-                                data-aos="zoom-in-right" data-aos-duration="1000">
+                            <a href="{{ route('front.viewContactUs') }}"
+                                class="kewta-btn d-inline-flex align-items-center" data-aos="zoom-in-right"
+                                data-aos-duration="1000">
                                 <span class="kew-text n0-color">
                                     Contact Us
                                 </span>
@@ -466,45 +467,46 @@
             <div class="swiper educational__wrap position-relative">
                 <div class="swiper-wrapper">
                     @foreach ($colleges as $college)
-                    <div class="swiper-slide wow fadeInUp" data-wow-delay="0.5s">
-                        <div class="explore__item cmnhover" data-aos="zoom-in" data-aos-duration="1500">
-                            <div class="thumb over w-100 position-relative">
-                                <img style="height: 200px;"
-                                    src="{{ $path . json_decode($college->image, true)[0] }}"
-                                    class="w-100 radius32 mimg " alt="img">
-                            </div>
-                            <div class="content pt-5 pt-xxl-6 px-0 px-xl-3 px-xxl-4 pb-xxl-4 pb-3">
-
-                                <h4 class="mb-4 mb-xl-5">
-                                    <a href="{{ route('front.viewOneColleges', ['id' => $college->id]) }}" class="ptext">
-                                        {{ $college->name }}
-                                    </a>
-                                </h4>
-
-                                <div class="d-flex align-items-center justify-start mb-2 mb-xl-6">
-                                    <span
-                                        style="background-color: rgb(100, 200, 100); color:white; font-size: 10px; padding: 0.5em;"
-                                        class="rounded fw_600 py-1 py-xl-2 px-1 px-xl-2">
-                                        {{ $college->rating }}
-                                    </span>
-
-                                    <span style="color: black;" class="py-1 py-xl-2 px-3 px-xl-4">
-                                        4 rating
-                                    </span>
-
+                        <div class="swiper-slide wow fadeInUp" data-wow-delay="0.5s">
+                            <div class="explore__item cmnhover" data-aos="zoom-in" data-aos-duration="1500">
+                                <div class="thumb over w-100 position-relative">
+                                    <img style="height: 200px;"
+                                        src="{{ $path . json_decode($college->image, true)[0] }}"
+                                        class="w-100 radius32 mimg " alt="img">
                                 </div>
-                                <div class="d-flex align-items-center justify-content-between mb-1 mb-xl-1">
-                                    <div class="d-flex align-items-center gap-1 gap-xl-2">
+                                <div class="content pt-5 pt-xxl-6 px-0 px-xl-3 px-xxl-4 pb-xxl-4 pb-3">
 
-                                        <h6 class="n700-color fw_500"
-                                            style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 5; -webkit-box-orient: vertical;">
-                                            {{ substr(strip_tags($college->description), 0, 300) }}
-                                        </h6>
+                                    <h4 class="mb-4 mb-xl-5">
+                                        <a href="{{ route('front.viewOneColleges', ['id' => $college->id]) }}"
+                                            class="ptext">
+                                            {{ $college->name }}
+                                        </a>
+                                    </h4>
+
+                                    <div class="d-flex align-items-center justify-start mb-2 mb-xl-6">
+                                        <span
+                                            style="background-color: rgb(100, 200, 100); color:white; font-size: 10px; padding: 0.5em;"
+                                            class="rounded fw_600 py-1 py-xl-2 px-1 px-xl-2">
+                                            {{ $college->rating }}
+                                        </span>
+
+                                        <span style="color: black;" class="py-1 py-xl-2 px-3 px-xl-4">
+                                            4 rating
+                                        </span>
+
+                                    </div>
+                                    <div class="d-flex align-items-center justify-content-between mb-1 mb-xl-1">
+                                        <div class="d-flex align-items-center gap-1 gap-xl-2">
+
+                                            <h6 class="n700-color fw_500"
+                                                style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 5; -webkit-box-orient: vertical;">
+                                                {{ substr(strip_tags($college->description), 0, 300) }}
+                                            </h6>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
                     @endforeach
                 </div>
             </div>
@@ -539,46 +541,58 @@
             <div class="swiper testimonial__onewrap">
                 <div class="swiper-wrapper">
                     @foreach ($reviews as $review)
-                    <div class="swiper-slide">
-                        <div class="testi__oneitem radius32 py-5 py-xxl-8 px-4 px-xxl-8 position-relative"
-                            data-aos="zoom-in" data-aos-duration="1500">
-                            <ul class="ratting d-flex align-items-center gap-1 gap-xl-2">
-                                <li>
-                                    <i class="ti ti-star-filled fs20 s1-color"></i>
-                                </li>
-                                <li>
-                                    <i class="ti ti-star-filled fs20 s1-color"></i>
-                                </li>
-                                <li>
-                                    <i class="ti ti-star-filled fs20 s1-color"></i>
-                                </li>
-                                <li>
-                                    <i class="ti ti-star-filled fs20e s1-color"></i>
-                                </li>
-                                <li>
-                                    <i class="ti ti-star-half-filled fs20 s1-color"></i>
-                                </li>
-                            </ul>
-                            <p class="mb-5 mt-8 mb-xxl-8 pragraph n700-color">
-                                {{ $review -> review }}
-                            </p>
-                            <div class="d-flex align-items-center gap-2 gap-xxl-6">
-                                <!-- <img src="assets/images/common/cameron.png" alt="img" class="radius100"> -->
-                                <div class="cont">
-                                    <span class="n700-color cameron d-block mb-0 mb-xl-1">
-                                        {{ $review -> name }}
-                                    </span>
+                        <div class="swiper-slide">
+                            <div class="testi__oneitem radius32 py-5 py-xxl-8 px-4 px-xxl-8 position-relative"
+                                data-aos="zoom-in" data-aos-duration="1500">
+                                <ul class="ratting d-flex align-items-center gap-1 gap-xl-2">
+                                    <li>
+                                        <i class="ti ti-star-filled fs20 s1-color"></i>
+                                    </li>
+                                    <li>
+                                        <i class="ti ti-star-filled fs20 s1-color"></i>
+                                    </li>
+                                    <li>
+                                        <i class="ti ti-star-filled fs20 s1-color"></i>
+                                    </li>
+                                    <li>
+                                        <i class="ti ti-star-filled fs20e s1-color"></i>
+                                    </li>
+                                    <li>
+                                        <i class="ti ti-star-half-filled fs20 s1-color"></i>
+                                    </li>
+                                </ul>
+                                <p class="mb-5 mt-8 mb-xxl-8 pragraph n700-color">
+                                    {{ $review->review }}
+                                </p>
 
+                                @if($review->image)
+                                    @php
+                                        $img = $review->image;
+                                    @endphp
+                                @else
+                                @php
+                                    $img = 'https://cdn-icons-png.flaticon.com/512/149/149071.png';
+                                @endphp
+
+                                @endif
+
+                                <div class="d-flex align-items-center gap-2 gap-xxl-6">
+                                    <img src="{{ $img }}" alt="img" class="radius100" style="max-width: 50px; max-height: 50px;">
+                                    <div class="cont">
+                                        <span class="n700-color cameron d-block mb-0 mb-xl-1">
+                                            {{ $review->name }}
+                                        </span>
+
+                                    </div>
                                 </div>
+                                <img src="{{ asset('frontstyles/assets/images/vectors/vector-white.png') }}"
+                                    alt="img" class="cmn__white">
+                                <a href="#0"
+                                    class="quote radius100 d-flex align-items-center justify-content-center">
+                                    <i class="ti ti-quote fs-five n700-color"></i>
+                                </a>
                             </div>
-                            <img src="{{ asset('frontstyles/assets/images/vectors/vector-white.png') }}"
-                                alt="img" class="cmn__white">
-                            <a href="#0"
-                                class="quote radius100 d-flex align-items-center justify-content-center">
-                                <i class="ti ti-quote fs-five n700-color"></i>
-                            </a>
                         </div>
-                    </div>
                     @endforeach
                 </div>
 
@@ -606,4 +620,4 @@
     <!-- testimonial end -->
 
     <!-- footer Start -->
-@include('frontend.layouts.footer')
+    @include('frontend.layouts.footer')

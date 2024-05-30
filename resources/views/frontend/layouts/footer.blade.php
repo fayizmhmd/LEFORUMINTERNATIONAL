@@ -43,7 +43,7 @@
                 </div> -->
 
                 <!-- <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-6">
-                    <div class="footer_onewidget_link">
+                    <div class="footer__onewidget__link">
                         <h4 class="n0-color mb-5 mb-md-8">
                             Contact Us
                         </h4>
@@ -73,7 +73,7 @@
 
 
                 <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-6">
-                    <div class="footer_onewidget_link">
+                    <div class="footer__onewidget__link">
                         <h4 class="n0-color mb-5 mb-md-8">
                             Contact Us
                         </h4>
@@ -82,8 +82,8 @@
                                 <span class="icon cmn__social d-center">
                                     <i class="ti ti-phone fs-five fw_400"></i>
                                 </span>
-                                <a href="#" class="p1hover">
-                                    {{ $phone_number }}
+                                <a href="{{ $phone_number }}" class="p1hover">
+                                    +97433651797
                                 </a>
                             </li>
                             <li class="d-flex align-items-center gap-3 gap-xl-5 mb-4 mb-xl-6">
@@ -105,7 +105,7 @@
     </div>
     <div class="footer__bottomone">
         <div class="container">
-            <div class="footer_bottomone_content bt-dash d-grid justify-content-center text-center  py-6 py-lg-10 d-md-flex align-items-center justify-content-lg-between gap-2 gap-md-15">
+            <div class="footer__bottomone__content bt-dash d-grid justify-content-center text-center  py-6 py-lg-10 d-md-flex align-items-center justify-content-lg-between gap-2 gap-md-15">
                 <p class="fs-seven n0-color">
                     © 2024 Le Forum | Powered by <a href="https://howincloud.com/" class="link-hover-dark-primary font-weight-semibold" target="_blank"><span style="font-size: 16px; font-weight: bolder; color: white">Howin </span><span style="font-size: 13px; font-weight: 600; color: white" >CLOUD</span></a>
                 </p>
@@ -124,7 +124,7 @@
             </div>
         </div>
     </div>
-    </footer>
+</footer>
 <!-- footer end -->
 
 

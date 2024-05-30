@@ -74,9 +74,9 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/save-colleges', [CollegeController::class, 'saveColleges'])->name('admin.saveColleges');
     Route::get('/edit-colleges/{id}', [CollegeController::class, 'edit'])->name('admin.editColleges');
     Route::post('/update-colleges-info/{id}', [CollegeController::class, 'updateCollege'])->name('admin.updateColleges');
-    // Route::post('/admin/deleteCollege/{id}', [CollegeController::class, 'delete'])->name('admin.deleteCollege');
     Route::get('/admin/deleteColleges/{id}', [CollegeController::class, 'delete'])->name('admin.deleteColleges');
     Route::get('/toggle-college/{id}', [CollegeController::class, 'toggleCollege'])->name('admin.toggleCollege');
+    Route::get('/categorySelect-college/{id}', [FrontEndController::class, 'listByCategory'])->name('admin.listByCategory');
 
 
 

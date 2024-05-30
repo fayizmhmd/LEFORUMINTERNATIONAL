@@ -144,25 +144,6 @@ h6 > a {
     line-height: 1.4;
   }
 }
-
-
-@media screen and (min-width: 1200px) and (max-width: 1320px) {
-    .email-link {
-        word-wrap: break-word; /* Ensure long words break properly */
-        white-space: normal; /* Allow the text to wrap normally */
-        display: block; /* Ensure the link takes up the necessary space */
-    }
-
-    .footer_onewidgetlink .widget_contactone li {
-        flex-direction: column; /* Stack icon and text vertically */
-        align-items: flex-start; /* Align items to the start */
-    }
-
-    .footer_onewidgetlink .widget_contactone li .icon {
-        margin-bottom: 8px; /* Add some space below the icon */
-    }
-  }
-
 .fs18 {
   font-size: 18px;
   line-height: 1.5;
@@ -3184,7 +3165,7 @@ iframe {
 .cmn-s2color-header .main-navbar .custom-nav .menu-link a:hover,
 .cmn-s2color-header .main-navbar .custom-nav .menu-link a.active {
   color: var(--s2) !important;
-
+  
 }
 .cus__scroll {
   max-height: 65vh;
@@ -3344,9 +3325,11 @@ iframe {
 .header__two.header-fixed {
   display: block;
 }
-.head-border {
+
+/* .head-border {
   border-bottom: 1px solid var(--n30);
-}
+} */
+
 .header-v3 .category__oneadjust .catev3 {
   border: 1px solid var(--n30);
   background: var(--n20);
@@ -3910,6 +3893,7 @@ iframe {
 }
 .header-v5 .one__header.header-fixed {
   background: var(--n0);
+  border-bottom: 1px solid var(--n30);
 }
 @media (max-width: 510px) {
   .edubox-f5-form {
@@ -9896,7 +9880,7 @@ iframe {
 
 
 .slick-slider {
-  width: 90%;
+  width: 90%; 
   height: 25%;/* Adjust the width as needed */
   margin: 0 auto;
   display: flex;
@@ -10020,13 +10004,13 @@ h2{
   color: black;
 }
 @media only screen and (min-width: 1400px) and (max-device-width: 2668px) {
-
+  
   .top-view{
     margin-top: 230px !important;
   }
 }
 /* @media only screen and (max-width: 2056px)  {
-
+  
   .top-view{
     margin-top: 200px !important;
   }
@@ -10051,4 +10035,22 @@ h2{
 }
 .webcolor{
   color: black;
+}
+
+
+@media screen and (min-width: 1200px) and (max-width: 1320px) {
+  .email-link {
+      word-wrap: break-word; /* Ensure long words break properly */
+      white-space: normal; /* Allow the text to wrap normally */
+      display: block; /* Ensure the link takes up the necessary space */
+  }
+
+  .footer__onewidget__link .widget__contactone li {
+      flex-direction: column; /* Stack icon and text vertically */
+      align-items: flex-start; /* Align items to the start */
+  }
+
+  .footer__onewidget__link .widget__contactone li .icon {
+      margin-bottom: 8px; /* Add some space below the icon */
+  }
 }
