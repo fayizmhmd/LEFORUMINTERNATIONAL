@@ -89,7 +89,7 @@
     <!-- whatsapp button -->
     <a href="{{ $whatsapp }}" class="whatsapp-float" target="_blank" style="text-decoration: none !important;">
         <i class="fab fa-whatsapp my-float"></i>
-        </a>
+    </a>
 
     <!-- Scroll To Top Start-->
     <button class="scrollToTop d-md-flex d-center" aria-label="scroll Bar Button"><i
@@ -260,31 +260,31 @@
         <div class="container">
             <div class="row g-6 justify-content-center">
                 @foreach ($categories as $category)
-                <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-4 col-sm-6" data-aos="zoom-in-right"
-                    data-aos-duration="1200">
-                    <a href="{{ route('admin.listByCategory', ['id' => $category->id]) }}" class="">
-                        <div
-                            class="chart-your-course online-courseitem online-courseitem-v2  radius16 cus-border border py-5 py-xl-8 py-xxl-10 px-4">
-                            <!-- //online-courseitem online-courseitem-v2 -->
-                            <div class="icon cmn__icon88 n0-bg d-center radius100 mb-4 mb-lg-5 mb-xl-6 mb-xxl-8">
-                                <img src="{{ $path . $category->image }}" alt="Example SVG">
-                            </div>
-                            <div class="contbox d-flex align-items-center justify-content-between gap-2">
-                                <div class="cont">
-                                    <h5 style="font-size: 14px;" class="n700-color mb-2">
-                                        {{ $category->name }}
-                                    </h5>
-                                    <!-- <a href="browse-courses.html" class="cor n700-color">
+                    <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-4 col-sm-6" data-aos="zoom-in-right"
+                        data-aos-duration="1200">
+                        <a href="{{ route('admin.listByCategory', ['id' => $category->id]) }}" class="">
+                            <div
+                                class="chart-your-course online-courseitem online-courseitem-v2  radius16 cus-border border py-5 py-xl-8 py-xxl-10 px-4">
+                                <!-- //online-courseitem online-courseitem-v2 -->
+                                <div class="icon cmn__icon88 n0-bg d-center radius100 mb-4 mb-lg-5 mb-xl-6 mb-xxl-8">
+                                    <img src="{{ $path . $category->image }}" alt="Example SVG">
+                                </div>
+                                <div class="contbox d-flex align-items-center justify-content-between gap-2">
+                                    <div class="cont">
+                                        <h5 style="font-size: 14px;" class="n700-color mb-2">
+                                            {{ $category->name }}
+                                        </h5>
+                                        <!-- <a href="browse-courses.html" class="cor n700-color">
                                     1,956 Courses
                                 </a> -->
+                                    </div>
+
+                                    <i class="ti ti-arrow-up-right s2-color fs-five"></i>
+
                                 </div>
-
-                                <i class="ti ti-arrow-up-right s2-color fs-five"></i>
-
                             </div>
-                        </div>
-                    </a>
-                </div>
+                        </a>
+                    </div>
                 @endforeach
             </div>
             <!-- <div class="m-auto text-center mt-8 mt-xl-10" data-aos="zoom-in" data-aos-duration="1800">
@@ -561,23 +561,23 @@
                                         <i class="ti ti-star-half-filled fs20 s1-color"></i>
                                     </li>
                                 </ul>
-                                <p class="mb-5 mt-8 mb-xxl-8 pragraph n700-color">
+                                <p class="mb-5 mt-8 mb-xxl-8 pragraph n700-color" style="display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; overflow: hidden; text-overflow: ellipsis;">
                                     {{ $review->review }}
                                 </p>
 
-                                @if($review->image)
+                                @if ($review->image)
                                     @php
                                         $img = $review->image;
                                     @endphp
                                 @else
-                                @php
-                                    $img = 'https://cdn-icons-png.flaticon.com/512/149/149071.png';
-                                @endphp
-
+                                    @php
+                                        $img = 'https://cdn-icons-png.flaticon.com/512/149/149071.png';
+                                    @endphp
                                 @endif
 
                                 <div class="d-flex align-items-center gap-2 gap-xxl-6">
-                                    <img src="{{ $img }}" alt="img" class="radius100" style="max-width: 50px; max-height: 50px;">
+                                    <img src="{{ $img }}" alt="img" class="radius100"
+                                        style="max-width: 50px; max-height: 50px;">
                                     <div class="cont">
                                         <span class="n700-color cameron d-block mb-0 mb-xl-1">
                                             {{ $review->name }}

@@ -9,6 +9,7 @@ use App\Models\CollegeReview;
 use App\Models\Course;
 use App\Models\FAQ;
 use App\Models\Location;
+use App\Models\Setting;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -178,6 +179,13 @@ class CollegeController extends Controller
         $faqs = FAQ::where('college_id',$college->id)->get();
         $collegereviews = CollegeReview::where('college_id',$college->id)->get();
 
-        return view('frontend.viewonecollege', compact('college','faqs','collegereviews'));
+        $phone_number = Setting::where('key', 'phone_number')->first()->value;
+        $mail_id = Setting::where('key', 'mail_id')->first()->value;
+        $facebook = Setting::where('key', 'facebook')->first()->value;
+        $instagram = Setting::where('key', 'instagram')->first()->value;
+        $whatsapp = Setting::where('key', 'whatsapp')->first()->value;
+        $youtube = Setting::where('key', 'youtube')->first()->value;
+
+        return view('frontend.viewonecollege', compact('college','faqs','collegereviews','phone_number', 'mail_id', 'facebook', 'instagram', 'whatsapp', 'youtube'));
     }
 }

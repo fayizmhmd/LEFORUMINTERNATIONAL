@@ -220,7 +220,7 @@
                                                 </div>
                                                 @endforeach
                                             </div>
-                                            <ul
+                                            {{-- <ul
                                                 class="pagination mt-10 d-flex justify-content-center align-items-center gap-xxl-3 gap-2 flex-wrap">
                                                 <li>
                                                     <a href="javascript:void(0)"
@@ -258,7 +258,7 @@
                                                         <i class="ti ti-chevron-right fs-six"></i>
                                                     </a>
                                                 </li>
-                                            </ul>
+                                            </ul> --}}
                                         </div>
                                         <div class="tabitem">
                                             <div class="row g-6">

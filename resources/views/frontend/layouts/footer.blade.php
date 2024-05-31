@@ -127,6 +127,12 @@
 </footer>
 <!-- footer end -->
 
+<style>
+    body .summer-note span, body .summer-note p, body .summer-note li, body .summer-note label  {
+    color: black !important;
+}
+</style>
+
 
 <!-- ==== js dependencies start ==== -->
 <script src="{{ asset('frontstyles/assets/js/plugins/plugins.js') }}"></script>
