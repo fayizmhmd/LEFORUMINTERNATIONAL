@@ -27,9 +27,14 @@ use Illuminate\Support\Facades\Route;
 //     return view('auth.login');
 // });
 
-Route::get('/', function () {
-    return redirect()->route('admin.dashboard');
-});
+// Route::get('/', function () {
+//     // return redirect()->route('admin.home');
+//     Route::get('/home', [FrontEndController::class, 'home'])->name('admin.home');
+
+
+// });
+Route::get('/', [FrontEndController::class, 'home'])->name('admin.home');
+
 
 
 Route::get('/login', [AuthController::class, 'login'])->name('login');
@@ -137,6 +142,7 @@ Route::middleware(['auth'])->group(function () {
 
     //home
     Route::get('/home', [FrontEndController::class, 'home'])->name('admin.home');
+
     //All Colleges
     Route::get('/allcolleges', [FrontEndController::class, 'allcolleges'])->name('front.allcolleges');
     //About-us

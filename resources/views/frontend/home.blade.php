@@ -197,7 +197,7 @@
                             progress with us.
                         </p>
                         <div class="d-flex align-items-center gap-4 gap-xxl-6">
-                            <a href="about.html"
+                            <a href="{{ route('front.viewAboutUs') }}"
                                 class="cmn-btn n700-color gap-2 d-flex align-items-center radius30 py-2 py-xxl-4 px-xxl-8 px-5"
                                 data-aos="zoom-in-left" data-aos-duration="1400">
                                 <span>
@@ -205,7 +205,7 @@
                                 </span>
                                 <i class="ti ti-arrow-up-right fs-six"></i>
                             </a>
-                            <a href="contact.html"
+                            <a href="{{ route('front.viewContactUs') }}"
                                 class="cmn-btn d-none d-sm-block second-alt n700-color gap-2 d-flex align-items-center radius30 py-2 py-xxl-4 px-xxl-8 px-5"
                                 data-aos="zoom-in-left" data-aos-duration="1400">
                                 <span>

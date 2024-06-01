@@ -128,11 +128,22 @@
 <!-- footer end -->
 
 <style>
-    body .summer-note span, body .summer-note p, body .summer-note li, body .summer-note label  {
-    color: black !important;
-}
-</style>
+    body .summer-note span,
+    body .summer-note p,
+    body .summer-note li,
+    body .summer-note label {
+        color: black !important;
+    }
 
+    body .summer-note a {
+        color: blue !important;
+    }
+
+
+    .summer-note li{
+        list-style: disc !important;
+    }
+</style>
 
 <!-- ==== js dependencies start ==== -->
 <script src="{{ asset('frontstyles/assets/js/plugins/plugins.js') }}"></script>

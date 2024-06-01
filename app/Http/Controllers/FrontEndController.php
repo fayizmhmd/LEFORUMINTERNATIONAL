@@ -80,6 +80,7 @@ class FrontEndController extends Controller
         $category = Category::findOrFail($id);
         $colleges = College::where('category_id', $id)->get();
 
+
         $phone_number = Setting::where('key', 'phone_number')->first()->value;
         $mail_id = Setting::where('key', 'mail_id')->first()->value;
         $facebook = Setting::where('key', 'facebook')->first()->value;
@@ -87,6 +88,6 @@ class FrontEndController extends Controller
         $whatsapp = Setting::where('key', 'whatsapp')->first()->value;
         $youtube = Setting::where('key', 'youtube')->first()->value;
 
-        return view('frontend.CategoryListClgs', compact('category', 'colleges','phone_number', 'mail_id', 'facebook', 'instagram', 'whatsapp', 'youtube'));
+       return view('frontend.CategoryListClgs', compact('category', 'colleges','phone_number', 'mail_id', 'facebook', 'instagram', 'whatsapp', 'youtube'));
     }
 }

@@ -69,7 +69,7 @@
         <div class='form-group row mb-4 align-middle'>
             <label class="col-lg-3 required form-label">Image</label>
             <div class="col-lg-9">
-                <input type="file" class="form-control" placeholder="Browse image" name='images[]' multiple required />
+                <input type="file" class="form-control" placeholder="Browse image" name='images[]' multiple  />
             </div>
             <div class="col-lg-3"></div>
             <div class="col-lg-9 mt-2">

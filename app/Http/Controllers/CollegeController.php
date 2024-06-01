@@ -103,14 +103,14 @@ class CollegeController extends Controller
 
         $images = [];
         if ($request->file('images')) {
-
             foreach ($request->file('images') as $image) {
                 $imageName = time() . '_' . $image->getClientOriginalName();
                 $image->move(public_path('/colleges/'), $imageName);
                 $images[] = 'colleges/' . $imageName;
             }
+            $college->image = json_encode($images);
+
         }
-       $college->image = json_encode($images);
 
         $content = $request->summernote;
 

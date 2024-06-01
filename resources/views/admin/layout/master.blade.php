@@ -152,9 +152,17 @@
         $(document).ready(function() {
             $('#summernote').summernote({
                 height: 200,
+
+                codeviewFilter: false, // Disable code view filtering
+                codeviewIframeFilter: true, // Enable iframe filtering
+                styleTags: [
+                    'p', 'blockquote', 'pre', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'ul', 'ol', 'li' // Include ul, ol, li
+                ]
             });
         });
     </script>
+
+
 
     {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script> --}}
 </body>
