@@ -86,6 +86,7 @@ class CollegeController extends Controller
 
     public function updateCollege(Request $request, $id)
     {
+        // dd($request->all());
         $college = College::find($id);
         $college->name = $request->name;
         $college->rating = $request->rating;
