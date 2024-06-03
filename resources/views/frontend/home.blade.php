@@ -467,7 +467,8 @@
             <div class="swiper educational__wrap position-relative">
                 <div class="swiper-wrapper">
                     @foreach ($colleges as $college)
-                        <div class="swiper-slide wow fadeInUp" data-wow-delay="0.5s">
+                        <a href="{{ route('front.viewOneColleges', ['id' => $college->id]) }}">
+                            <div class="swiper-slide wow fadeInUp" data-wow-delay="0.5s">
                             <div class="explore__item cmnhover" data-aos="zoom-in" data-aos-duration="1500">
                                 <div class="thumb over w-100 position-relative">
                                     <img style="height: 200px;"
@@ -507,6 +508,7 @@
                                 </div>
                             </div>
                         </div>
+                    </a>
                     @endforeach
                 </div>
             </div>

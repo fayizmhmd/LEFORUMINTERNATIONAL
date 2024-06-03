@@ -152,6 +152,33 @@
 <script src="{{ asset('frontstyles/assets/js/plugins/aos.js') }}"></script>
 <script src="{{ asset('frontstyles/assets/js/main.js') }}"></script>
 
+
+<script>
+    function showCustomAlert(message) {
+        const alertBox = document.getElementById('custom-alert');
+        const alertMessage = document.getElementById('custom-alert-message');
+        alertMessage.textContent = message;
+        alertBox.style.display = 'block';
+
+        // setTimeout(function() {
+        //     alertBox.style.display = 'none';
+        // }, 3000); // Hide after 5 seconds
+    }
+
+    function validateForm() {
+        let name = document.getElementById('name').value;
+        let email = document.getElementById('email').value;
+        let phone = document.getElementById('phone').value;
+        let subject = document.getElementById('subject').value;
+
+        if (!name || !email || !phone || !subject) {
+            alert("All fields are required!");
+            return false;
+        }
+        return true;
+    }
+</script>
+
 </body>
 
 

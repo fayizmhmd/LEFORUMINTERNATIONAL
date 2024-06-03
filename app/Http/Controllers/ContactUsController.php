@@ -33,6 +33,14 @@ class ContactUsController extends Controller
 {
     $data = new ContactForm();
 
+
+    $request->validate([
+        'name' => 'required|string|max:255',
+        'email' => 'required|email|max:255',
+        'phone' => 'required|numeric',
+        'subject' => 'required|string|max:1000',
+    ]);
+
     $data->name = $request->name;
     $data->mail = $request->email;
     $data->email = $request->email;
@@ -44,7 +52,7 @@ class ContactUsController extends Controller
 
     Mail::to('fayizklr192@gmail.com')->send(new ContactFormMail($request->all()));
 
-    return redirect()->back()->with('success', 'Your message has been sent successfully!');
+    return redirect()->back()->with('success', 'Message sent successfully!');
 }
 
 

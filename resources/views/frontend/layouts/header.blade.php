@@ -28,6 +28,29 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.36.0/tabler-icons.min.css" />
 
     <link rel="stylesheet" href="{{ $path }}frontstyles/assets/css/style.min.css" />
+
+    <style>
+        .custom-alert {
+    display: none;
+    position: fixed;
+    top: 20px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    background-color: green; /* Light background color */
+     /* Black text color */
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    z-index: 1000;
+    width: 300px;
+    border: 1px solid green;
+    text-align: center;
+}
+.success-message{
+    color: black !important;
+}
+    </style>
 </head>
 
 <body class="n0-bg">
