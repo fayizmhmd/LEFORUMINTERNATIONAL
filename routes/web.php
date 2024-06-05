@@ -40,6 +40,19 @@ Route::get('/', [FrontEndController::class, 'home'])->name('admin.home');
 Route::get('/login', [AuthController::class, 'login'])->name('login');
 Route::post('do-login', [AuthController::class, 'doLogin'])->name('do.login');
 
+//FrontEnd
+
+
+//All Colleges
+Route::get('/all-colleges', [FrontEndController::class, 'allcolleges'])->name('front.allcolleges');
+//About-us
+Route::get('/about-us', [AboutUsController::class, 'AboutUs'])->name('front.viewAboutUs');
+//contact-us
+Route::get('/contact-us', [ContactUsController::class, 'ContactUs'])->name('front.viewContactUs');
+//category
+Route::get('/category/{id}', [FrontEndController::class, 'listByCategory'])->name('admin.listByCategory');
+//College view in a page
+Route::get('/view-college/{id}', [CollegeController::class, 'viewone'])->name('front.viewOneColleges');
 
 
 Route::middleware(['auth'])->group(function () {
@@ -81,12 +94,8 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/update-colleges-info/{id}', [CollegeController::class, 'updateCollege'])->name('admin.updateColleges');
     Route::get('/admin/deleteColleges/{id}', [CollegeController::class, 'delete'])->name('admin.deleteColleges');
     Route::get('/toggle-college/{id}', [CollegeController::class, 'toggleCollege'])->name('admin.toggleCollege');
-    Route::get('/categorySelect-college/{id}', [FrontEndController::class, 'listByCategory'])->name('admin.listByCategory');
 
 
-
-    //College view in a page
-    Route::get('/viewone-colleges/{id}', [CollegeController::class, 'viewone'])->name('front.viewOneColleges');
 
     //College FAQ
     Route::get('/view-FAQ', [FaqController::class, 'viewFAQ'])->name('admin.viewFAQ');
@@ -140,15 +149,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/view-settings', [SettingsController::class, 'viewsettings'])->name('admin.viewsettings');
     Route::post('/update-settings', [SettingsController::class, 'updatesettings'])->name('admin.updatesettings');
 
-    //home
-    Route::get('/home', [FrontEndController::class, 'home'])->name('admin.home');
 
-    //All Colleges
-    Route::get('/allcolleges', [FrontEndController::class, 'allcolleges'])->name('front.allcolleges');
-    //About-us
-    Route::get('/view-aboutus', [AboutUsController::class, 'AboutUs'])->name('front.viewAboutUs');
-    //contact-us
-    Route::get('/view-contactus', [ContactUsController::class, 'ContactUs'])->name('front.viewContactUs');
 
     //mail from user
     Route::post('/view-mails', [ContactUsController::class, 'contactmail'])->name('front.contactmail');
@@ -161,14 +162,7 @@ Route::middleware(['auth'])->group(function () {
 
 
     //plan
-    Route::group(['middleware' => 'permission:plans'], function () {
-        Route::get('/view-plans', [PlanController::class, 'viewPlans'])->name('admin.viewPlans');
-        Route::post('/add-new-plan', [PlanController::class, 'addPlan'])->name('admin.addPlan');
-        Route::get('/toggle-plan/{id}', [PlanController::class, 'togglePlan'])->name('admin.togglePlan');
-        Route::get('/edit-plan/{id}', [PlanController::class, 'editPlan'])->name('admin.editPlan');
-        Route::post('/update-plan-info', [PlanController::class, 'updatePlan'])->name('admin.updatePlan');
-        Route::get('/delete-plan/{id}', [PlanController::class, 'deletePlan'])->name('admin.deletePlan');
-    });
+
 
     //Subscriptions
     Route::group(['middleware' => 'permission:subscriptions'], function () {

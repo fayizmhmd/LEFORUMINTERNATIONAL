@@ -114,7 +114,7 @@
                     <!-- header-section start -->
                     <nav class="navbar-custom">
                         <div class="d-flex align-items-center justify-content-between">
-                            <a href="index.html" class="nav-brand d-block d-lg-none">
+                            <a href="{{ route('admin.home') }}" class="nav-brand d-block d-lg-none">
                                 <!-- <img style="width: 100px;" class="d-none d-md-block" src="assets/images/le logo white-12.png" alt="logo"> -->
                                 <img style="width: 200px;" class="d-block d-md-none"
                                     src="{{ asset('frontstyles/assets/images/le-logo-gold-12.png') }}" alt="logo">
@@ -133,14 +133,14 @@
                             <div
                                 class="d-flex gap-5 flex-column flex-lg-row align-items-start align-items-lg-center justify-content-between mt-5 mt-lg-0">
                                 <div class="left__navbox d-flex align-items-center gap-4 gap-xl-6 gap-xxl-10">
-                                    <a href="index.html" class="navbar-brand d-none d-lg-block">
+                                    <a href="{{ route('admin.home') }}" class="navbar-brand d-none d-lg-block">
                                         <img style="width: 200px;" class=""
                                             src="{{ asset('frontstyles/assets/images/le-logo-gold-12.png') }}"
                                             alt="logo">
                                     </a>
                                     <ul class="custom-nav d-lg-flex d-grid gap-4 gap-xl-6">
                                         <li class="menu-item itembg__1 position-relative">
-                                            <a href="index.html" class="fw_500 n500-color below991px">Home</a>
+                                            <a href="{{ route('admin.home') }}" class="fw_500 n500-color below991px">Home</a>
 
                                         </li>
                                         <li class="menu-item itembg__1 position-relative">

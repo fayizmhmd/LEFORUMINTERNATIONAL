@@ -116,9 +116,7 @@
                         </a>
                     </li> -->
                     <li>
-                        <a href="privacy.html" class="fs-seven n0-color p1hover">
-                            Privacy Policy
-                        </a>
+
                     </li>
                 </ul>
             </div>
