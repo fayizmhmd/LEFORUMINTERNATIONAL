@@ -160,9 +160,9 @@
         alertMessage.textContent = message;
         alertBox.style.display = 'block';
 
-        // setTimeout(function() {
-        //     alertBox.style.display = 'none';
-        // }, 3000); // Hide after 5 seconds
+        setTimeout(function() {
+            alertBox.style.display = 'none';
+        }, 3000); // Hide after 5 seconds
     }
 
     function validateForm() {

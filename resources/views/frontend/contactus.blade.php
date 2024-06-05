@@ -148,7 +148,7 @@
                 </div>
             </div>
             <div id="custom-alert" class="custom-alert">
-                <span id="custom-alert-message"></span>
+                <span id="custom-alert-message" style="color: white !important"></span>
             </div>
 
             @if (session('success'))
